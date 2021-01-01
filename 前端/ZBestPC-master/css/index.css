@@ -5,7 +5,6 @@ img{
 	width: 928px;
 	margin: 0 auto;
 }
-
 /*thImg*/
 .thImg{
 	width: 880px;
@@ -98,7 +97,7 @@ img{
 	padding: 10px;
 	color: #a10000;
 	border: 1px solid #bababa;
-	font-size: 26px;
+	font-size: 16px;
 	font-weight: bold;
 	background: #fff;
 	transition: all .8s ease;
@@ -175,7 +174,7 @@ a.ad{
 .people .pList dl dd span{
 	display: inline-block;
 	color: #a10000;
-	font-size: 26px;
+	font-size: 14px;
 	font-weight: bold;
 	margin-bottom: 10px;
 }
