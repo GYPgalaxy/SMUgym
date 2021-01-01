@@ -49,9 +49,13 @@
 		  <span class="register-line"></span> 
 		  <a class="linkAGray" id="toVCodeLogin" href="{% url 'register' %}">账号注册</a>
 		 </div> 
-		 <div id="errorMsg" class="tip-box visiblility-hidden"> 
+		 {% if msg %}
+		 <div id="errorMsg" class="tip-box tip-box visiblility-show"> 
+		 {% else %}
+		 <div id="errorMsg" class="tip-box tip-box visiblility-hidden">
+		 {% endif %}
 		  <i class="err-ico"></i> 
-		  <span class="tip-font" id="tipMsg">请填写完整的登录信息</span> 
+		  <span class="tip-font" id="tipMsg">{{ msg }}</span> 
 		  <span id="closeErrorMsg" class="close-ico"></span> 
 		 </div> 
 		 
@@ -187,25 +191,7 @@
 				$.cookie("password", "");
 			}
 
-			//发送ajax请求
-			$.ajax({
-				  type: 'POST',
-				  url: 'login.action',
-				  data: 'account='+account+'&password='+password,
-				  dataType: 'JSON',
-				  success: function(data){
-					  //如果密码错误，则把cookie中的password清空同时表单内容设置为空,同时清空验证码，刷新验证码
-					  if(data=="!0"){
-						  $("#password").val("");
-						  $.cookie("password", "");
-						  $("#verify").val("")
-						  changeImg();
-						  alert("密码错误");
-					  }else{ //登录成功跳转页面
-						  window.location.href = ''; 
-					  }
-				  },
-			});
+			document.getElementById('mainForm').submit();
 
 
 	});  
