@@ -10,7 +10,7 @@ class Gender(models.TextChoices):
 # 教练
 class Coach(models.Model):
     name = models.CharField(max_length=200)
-    tel = models.CharField(max_length=11)
+    tel = models.CharField(max_length=11, unique=True)
     gender = models.CharField(max_length=4,
                             choices=Gender.choices,
                             default=Gender.UNKOWN)
@@ -24,15 +24,15 @@ class Coach(models.Model):
 #用户
 class User(models.Model):
     name = models.CharField(max_length=200)
-    tel = models.CharField(max_length=11)
+    tel = models.CharField(max_length=11, unique=True)
     gender = models.CharField(max_length=4,
                             choices=Gender.choices,
                             default=Gender.UNKOWN)
-    birthday = models.DateField()
-    regtime = models.DateField()
-    isvip = models.BooleanField()
-    vipstart = models.DateTimeField()
-    vipend = models.DateTimeField()
+    birthday = models.DateField(auto_now=True)
+    regtime = models.DateField(auto_now=True)
+    isvip = models.BooleanField(default=False)
+    vipstart = models.DateTimeField(auto_now=True)
+    vipend = models.DateTimeField(auto_now=True)
     pwd = models.CharField(max_length=20)
 
     def __str__(self):
