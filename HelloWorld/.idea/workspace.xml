@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="022d3c13-c1c5-4ec4-b290-e91be670b755" name="Default Changelist" comment="" />
+    <list default="true" id="022d3c13-c1c5-4ec4-b290-e91be670b755" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/.idea/HelloWorld.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/HelloWorld/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/HelloWorld/asgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/HelloWorld/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/HelloWorld/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/HelloWorld/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/migrations/0002_auto_20210101_1212.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/migrations/0003_auto_20210101_1216.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/gym/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/static/polls/images/background.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/static/polls/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/templates/polls/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/templates/polls/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/templates/polls/results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloWorld（后端美化后备份）/polls/views.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,8 +59,10 @@
   </component>
   <component name="Git.Settings">
     <option name="PATH_TO_GIT" value="C:\Program Files\Git\cmd\git.exe" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1mS4N5NaycuygQu1rVZxOpHiVOf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -29,6 +71,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/gym/templates/gym" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -81,6 +124,8 @@
       <workItem from="1609473615890" duration="4111000" />
       <workItem from="1609480725478" duration="4270000" />
       <workItem from="1609496183283" duration="2394000" />
+      <workItem from="1609500822650" duration="1441000" />
+      <workItem from="1609509971777" duration="280000" />
     </task>
     <servers />
   </component>
