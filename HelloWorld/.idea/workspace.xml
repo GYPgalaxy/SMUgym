@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="PATH_TO_GIT" value="C:\Program Files\Git\cmd\git.exe" />
+  </component>
   <component name="ProjectId" id="1mS4N5NaycuygQu1rVZxOpHiVOf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/gym/templates/gym" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -77,7 +80,7 @@
       <updated>1609473614350</updated>
       <workItem from="1609473615890" duration="4111000" />
       <workItem from="1609480725478" duration="4270000" />
-      <workItem from="1609496183283" duration="768000" />
+      <workItem from="1609496183283" duration="2394000" />
     </task>
     <servers />
   </component>
@@ -85,6 +88,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="789" y="454" key="Github.CreateGistDialog" timestamp="1609499641421">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="789" y="454" key="Github.CreateGistDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1609499641421" />
     <state width="1879" height="295" key="GridCell.Tab.0.bottom" timestamp="1609479130309">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -101,9 +108,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1879" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609479130309" />
-    <state x="470" y="185" key="SettingsEditor" timestamp="1609475823631">
+    <state x="923" y="187" key="SettingsEditor" timestamp="1609499558085">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="470" y="185" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1609475823631" />
+    <state x="923" y="187" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1609499558085" />
   </component>
 </project>
