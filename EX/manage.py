@@ -1,3 +1,5 @@
+#我在远程仓库进行了修改
+
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os
