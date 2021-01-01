@@ -14,8 +14,8 @@ class Coach(models.Model):
     gender = models.CharField(max_length=4,
                             choices=Gender.choices,
                             default=Gender.UNKOWN)
-    birthday = models.DateField()
-    info = models.TextField()
+    birthday = models.DateField(auto_now=True)
+    info = models.TextField(default='这里空荡荡的，什么也没有。')
 
     def __str__(self):
         return self.name
@@ -23,7 +23,7 @@ class Coach(models.Model):
 
 #用户
 class User(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default='普通用户')
     tel = models.CharField(max_length=11, unique=True)
     gender = models.CharField(max_length=4,
                             choices=Gender.choices,
