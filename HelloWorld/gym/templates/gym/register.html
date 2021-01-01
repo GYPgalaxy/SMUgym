@@ -39,35 +39,37 @@
 
   
    <div class="banner-box"> 
-    <form id="mainForm" class="main-form" enctype="application/x-www-form-urlencoded" novalidate="novalidate"> 
+	<form id="mainForm" class="main-form" action="" method="POST" enctype="application/x-www-form-urlencoded" novalidate="novalidate">
+		{% csrf_token %} 
 		 <div class="tab-title"> 
 		  <a class="linkAGray" id="toAccountLogin" href="{% url 'login' %}">账号登录</a>
 		  <span class="register-line"></span> 
 		  <a class="linkABlue" id="toVCodeLogin" href="{% url 'register' %}">账号注册</a>
 		 </div> 
 	
-		 <div id="errorMsg" class="tip-box visiblility-hidden"> 
+		 {% if msg %}
+		 <div id="errorMsg" class="tip-box tip-box visiblility-show"> 
+		 {% else %}
+		 <div id="errorMsg" class="tip-box tip-box visiblility-hidden">
+		 {% endif %}
 		  <i class="err-ico"></i> 
-		  <span class="tip-font" id="tipMsg" >请填写完整的注册信息</span> 
+		  <span class="tip-font" id="tipMsg" >{{ msg }}</span> 
 		  <span id="closeErrorMsg" class="close-ico"></span> 
 		 </div> 
 
 		 
 		 <div class="normalInput cycode-box fieldInput" id="cycode-box"> 
 		  <div class="cycode-selectbox"> 
-		   <input class="ipt-account inp-focus" name="email" id="email" maxlength="50" placeholder="手机号" autocomplete="off" onfocus="closeErrorMsg()" />
+		   <input class="ipt-account inp-focus" name="tel" id="tel" maxlength="11" placeholder="手机号" autocomplete="off" onfocus="closeErrorMsg()" />
 		    
 		  </div> 
 		 </div> 
 		 <div class="normalInput fieldInput"> 
-		  <input type="text" class="inp-focus" name="Verificationcode" id="Verificationcode" maxlength="16" autocomplete="off" placeholder="验证码"  onfocus="closeErrorMsg()"/>
-		  <span id="verifyCode"  class="verify" onclick="sendsms(this);">获取验证码</span>
+		  <input type="text" class="inp-focus" name="pwd" id="pwd" maxlength="20" autocomplete="off" placeholder="密码"  onfocus="closeErrorMsg()"/>
 		 </div> 
 
 		 
-
 		 <a id="register" class="fullBtnBlue">注册</a> 
-
 	 
     </form> 
 	
@@ -82,29 +84,15 @@
   <script>
   	//点击注册事件
   	$("#register").click(function(){  
-    		var email = $("#email").val();
-			var Verificationcode = $("#Verificationcode").val(); //输入的验证码
-
-			if( email=="" || Verificationcode==""){
-				var obj = document.getElementById("errorMsg");
-				$("#tipMsg").html("请填写完整的注册信息！");
-				obj.setAttribute("class", "tip-box visiblility-show");
-				return ;
-			}
-			//邮箱校验
-			var reg =/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-			var t = email.match(reg);
-			if( t == null ){
-				//提示错误信息
-				var obj = document.getElementById("errorMsg");
-				//修改提示文字
-				$("#tipMsg").html("请填写正确的邮箱！");
-				obj.setAttribute("class", "tip-box visiblility-show");
-				return ;
-			}
-			//发送ajax请求
-
-
+		var tel = $("#tel").val();
+		var pwd = $("#pwd").val();
+		if( tel=="" || pwd==""){
+			var obj = document.getElementById("errorMsg");
+			$("#tipMsg").html("请填写完整的注册信息！");
+			obj.setAttribute("class", "tip-box visiblility-show");
+			return;
+		}
+		document.getElementById('mainForm').submit();
 	});  
 
   	//点击错误信息关闭按钮
@@ -120,67 +108,6 @@
   			var obj = document.getElementById("errorMsg");
 			obj.setAttribute("class", "tip-box visiblility-hidden");
   	}
-
-
-    //发送验证码函数
-    function sendsms(e){
-    	var email = $("#email").val();
-    	if( email==""){
-			//提示错误信息
-			var obj = document.getElementById("errorMsg");
-			//修改提示文字
-			$("#tipMsg").html("请填写正确的邮箱！");
-			obj.setAttribute("class", "tip-box visiblility-show");
-			return ;
-    	}
-		//邮箱校验
-		var reg =/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-		var t = email.match(reg);
-		if( t == null ){
-			//提示错误信息
-			var obj = document.getElementById("errorMsg");
-			//修改提示文字
-			$("#tipMsg").html("请填写正确的邮箱！");
-			obj.setAttribute("class", "tip-box visiblility-show");
-			return ;
-		}
-
-
-
-    	//发送ajax请求，后台发送邮件
-		$.ajax({
-			  type: 'POST',
-			  url: 'register.action',
-			  data: 'email='+email
-		});
-
-
-        /*发送验证码功能*/
-        countdown(e);     //若发送验证码成功，则调用倒计时函数
-    }
-    //倒计时函数
-    var time = 5;
-    function countdown(e){
-         if (time == 0) {
-             e.setAttribute("onclick","sendsms(this)");
-             $("#verifyCode").html("获取验证码");
-             //颜色恢复
-             var mychar = document.getElementById("verifyCode");
-             mychar.style.backgroundColor  = "rgb(50,165,231)";
-             time = 5;
-         }else{
-             //设置背景为灰色
-             var mychar = document.getElementById("verifyCode");
-             mychar.style.backgroundColor  = "rgb(169,169,169)";
-
-             e.removeAttribute("onclick");
-             $("#verifyCode").html("重新发送(" + time + ")");
-             time--;
-             setTimeout(function() {
-                 countdown(e)
-             },1000)
-         }
-    }
 
 
   </script>
