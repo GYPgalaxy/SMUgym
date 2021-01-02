@@ -19,7 +19,6 @@ def login(request):
         # 2）校验失败，返回登陆页面
         tel = request.POST.get('tel')
         pwd = request.POST.get('pwd')
-        print(tel, pwd)
         if User.objects.filter(tel=tel, pwd=pwd):
             request.session['tel'] = tel
             latest_course_list = Course.objects.all()[:12]
@@ -68,5 +67,20 @@ def mygrxx(request):
     context = {'user': user}
     return render(request, 'gym/mygrxx.html', context)
 
-def cart(request):
-    return render(request,'gym/cart.html')
+def myorderq(request):
+    tel = request.session.get('tel')
+    user = User.objects.get(tel=tel)
+    context = {'user': user}
+    return render(request, 'gym/myorderq.html', context)
+
+def myprod(request):
+    tel = request.session.get('tel')
+    user = User.objects.get(tel=tel)
+    context = {'user': user}
+    return render(request, 'gym/myprod.html', context)
+
+def remima(request):
+    tel = request.session.get('tel')
+    user = User.objects.get(tel=tel)
+    context = {'user': user}
+    return render(request, 'gym/remima.html', context)
