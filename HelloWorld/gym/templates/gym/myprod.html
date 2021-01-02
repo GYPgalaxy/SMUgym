@@ -3,29 +3,31 @@
 	<head lang="en">
 		<meta charset="utf-8" />
 		<title>最家</title>
-		<link rel="stylesheet" type="text/css" href="css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="css/myorder.css" />
+		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/myorder.css' %}" />
 	</head>
 	<body>
 		<!------------------------------head------------------------------>
 		<div class="head ding">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="img/1logo.png"/></a></h1>
+					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
+						{% if request.session.tel %}
 						<p class="fl">
 							<a href="#" id="login">登录</a>
 							<a href="#" id="reg">注册</a>
 						</p>
+						{% endif %}
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="搜索" />
 							<input type="button" />
 						</form>
 						<div class="btn fl clearfix">
-							<a href="mygxin.html"><img src="img/grzx.png"/></a>
-							<a href="#" class="er1"><img src="img/ewm.png"/></a>
-							<a href="cart.html"><img src="img/gwc.png"/></a>
-							<p><a href="#"><img src="img/smewm.png"/></a></p>
+							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+							<a href="#" class="er1"><img src="{% static 'gym/style/images/ewm.png' %}"/></a>
+							<a href="{% url 'gym:cart' %}"><img src="{% static 'gym/style/images/gwc.png' %}"/></a>
+							<p><a href="#"><img src="{% static 'gym/style/images/smewm.png' %}"/></a></p>
 						</div>
 					</div>
 				</div>
@@ -34,11 +36,11 @@
 		<!------------------------------idea------------------------------>
 		<div class="address mt">
 			<div class="wrapper clearfix">
-				<a href="index.html" class="fl">首页</a>
+				<a href="{% url 'gym:index' %}" class="fl">首页</a>
 				<span>/</span>
-				<a href="mygxin.html" class="on">个人中心</a>
+				<a href="{% url 'gym:mygxin' %}" class="on">个人中心</a>
 				<span>/</span>
-				<a href="myprod.html" class="on">待评价课程</a>
+				<a href="{% url 'gym:myprod' %}" class="on">待评价课程</a>
 			</div>
 		</div>
 		
@@ -48,24 +50,24 @@
 			<div class="wrapper clearfix">
 				<div class="zuo fl">
 					<h3>
-						<a href="#"><img src="img/tx.png"/></a>
-						<p class="clearfix"><span class="fl">[羊羊羊]</span><span class="fr">[退出登录]</span></p>
+						<a href="#"><img src="{% static 'gym/style/images/tx.png' %}"/></a>
+						<p class="clearfix"><span class="fl">{{ user.name }}</span><span class="fr">[退出登录]</span></p>
 					</h3>
 					<div>
 						<h4>我的交易</h4>
 						<ul>
-							<li><a href="cart.html">我的购物车</a></li>
-							<li><a href="myorderq.html">我的课程</a></li>
-							<li class="on"><a href="myprod.html">课程评价</a></li>
+							<li><a href="{% url 'gym:cart' %}">我的购物车</a></li>
+							<li><a href="{% url 'gym:myorderq' %}">我的课程</a></li>
+							<li class="on"><a href="{% url 'gym:myprod' %}">课程评价</a></li>
 						</ul>
 						<h4>个人中心</h4>
 						<ul>
-							<li><a href="mygxin.html">我的中心</a></li>
+							<li><a href="{% url 'gym:mygxin' %}">我的中心</a></li>
 							<li><a href="mygxin.html">健康报告</a></li>
 						</ul>
 						<h4>账户管理</h4>
 						<ul>
-							<li><a href="mygrxx.html">个人信息</a></li>
+							<li><a href="{% url 'gym:mygrxx' %}">个人信息</a></li>
 							<li><a href="remima.html">修改密码</a></li>
 						</ul>
 					</div>
@@ -83,14 +85,14 @@
 					<div class="sx clearfix">
 						<div class="clearfix">
 							<dl class="fl">
-								<dt><a href="#"><img src="img/nav3.jpg"/></a></dt>
+								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
 								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
 								<dd>¥199.00</dd>
 								<dd>16000人评价</dd>
 								<dd><a href="#2">评价</a></dd>
 							</dl>
 							<dl class="fl">
-								<dt><a href="#"><img src="img/nav3.jpg"/></a></dt>
+								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
 								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
 								<dd>¥199.00</dd>
 								<dd>16000人评价</dd>
@@ -99,7 +101,7 @@
 						</div>
 						<div class="clearfix">
 							<dl class="fl">
-								<dt><a href="#"><img src="img/nav3.jpg"/></a></dt>
+								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
 								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
 								<dd>¥199.00</dd>
 								<dd>16000人评价</dd>
@@ -108,7 +110,7 @@
 						</div>
 						<div class="clearfix" >
 							<dl class="fl">
-								<dt><a href="#"><img src="img/nav3.jpg"/></a></dt>
+								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
 								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
 								<dd>¥199.00</dd>
 								<dd>16000人评价</dd>
@@ -124,17 +126,17 @@
 			<div class="mask"></div>
 			<!--评价弹框-->
 			<div class="pj">
-				<div class="clearfix"><a href="#" class="fr gb"><img src="img/icon4.png"/></a></div>
+				<div class="clearfix"><a href="#" class="fr gb"><img src="{% static 'gym/style/images/icon4.png' %}"/></a></div>
 				<h3>商品评分</h3>
 				<form action="#" method="get">
 					<div class="clearfix">
 						<p class="fl">请打分：</p>
 						<p class="fl" id="xin">
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
-							<a href="#2"><img src="img/xin.png"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/xin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/xin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/xin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/xin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/xin.png' %}"/></a>
 						</p>
 					</div>
 					<textarea name="" rows="" cols="" placeholder="请输入评价" ></textarea>
@@ -146,17 +148,17 @@
 			</div>
 			<!--查看评价-->
 			<div class="chak">
-				<div class="clearfix"><a href="#" class="fr gb"><img src="img/icon4.png"/></a></div>
+				<div class="clearfix"><a href="#" class="fr gb"><img src="{% static 'gym/style/images/icon4.png' %}"/></a></div>
 				<h3>商品评分</h3>
 				<form action="#" method="get">
 					<div class="clearfix">
 						<p class="fl">请打分：</p>
 						<p class="fl" id="xin">
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
-							<a href="#2"><img src="img/hxin.png"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/hxin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/hxin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/hxin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/hxin.png' %}"/></a>
+							<a href="#2"><img src="{% static 'gym/style/images/hxin.png' %}"/></a>
 						</p>
 					</div>
 					<textarea name="" rows="" cols="" placeholder="请输入评价" >挺好的挺好的挺好的~五分好评</textarea>
@@ -172,27 +174,27 @@
 			
 		<!--返回顶部-->
 		<div class="gotop">
-			<a href="cart.html">
+			<a href="{% url 'gym:cart' %}">
 			<dl>
-				<dt><img src="img/gt1.png"/></dt>
+				<dt><img src="{% static 'gym/style/images/gt1.png' %}"/></dt>
 				<dd>去购<br />物车</dd>
 			</dl>
 			</a>
 			<a href="#" class="dh">
 			<dl>
-				<dt><img src="img/gt2.png"/></dt>
+				<dt><img src="{% static 'gym/style/images/gt2.png' %}"/></dt>
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="mygxin.html">
+			<a href="{% url 'gym:mygxin' %}">
 			<dl>
-				<dt><img src="img/gt3.png"/></dt>
+				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
 				<dd>个人<br />中心</dd>
 			</dl>
 			</a>
 			<a href="#" class="toptop" style="display: none">
 			<dl>
-				<dt><img src="img/gt4.png"/></dt>
+				<dt><img src="{% static 'gym/style/images/gt4.png' %}"/></dt>
 				<dd>返回<br />顶部</dd>
 			</dl>
 			</a>
@@ -202,8 +204,8 @@
 		<div class="footer">
 			<p class="dibu" style="position: fixed;bottom: 0px;width:100%;height:100px;">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
 		</div>
-		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/public.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/user.js' %}" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
