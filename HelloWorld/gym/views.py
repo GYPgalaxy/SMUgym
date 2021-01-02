@@ -83,4 +83,17 @@ def remima(request):
     tel = request.session.get('tel')
     user = User.objects.get(tel=tel)
     context = {'user': user}
+    if request.method == 'POST':
+        pwd = request.POST.get('pwd')
+        new_pwd = request.POST.get('new_pwd')
+        new_pwd_1 = request.POST.get('anew_pwd')
+        print(new_pwd, new_pwd_1)
+        if User.objects.filter(tel=tel, pwd=pwd):
+            if new_pwd == new_pwd_1:
+                User.objects.filter(tel=tel, pwd=pwd).update(pwd=new_pwd)
+                context['msg'] = '修改成功'
+            else:
+                context['msg'] = '两次密码不匹配'
+        else:
+            context['msg'] = '原密码错误'
     return render(request, 'gym/remima.html', context)
