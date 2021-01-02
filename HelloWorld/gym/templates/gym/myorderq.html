@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head lang="en">
@@ -26,7 +27,6 @@
 						<div class="btn fl clearfix">
 							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
 							<a href="#" class="er1"><img src="{% static 'gym/style/images/ewm.png' %}"/></a>
-							<a href="{% url 'gym:cart' %}"><img src="{% static 'gym/style/images/gwc.png' %}"/></a>
 							<p><a href="#"><img src="{% static 'gym/style/images/smewm.png' %}"/></a></p>
 						</div>
 					</div>
@@ -57,7 +57,6 @@
 					<div>
 						<h4>我的交易</h4>
 						<ul>
-							<li><a href="{% url 'gym:cart' %}">我的购物车</a></li>
 							<li><a href="{% url 'gym:myorderq' %}">我的课程</a></li>
 							<li><a href="{% url 'gym:myprod' %}">课程评价</a></li>
 						</ul>
@@ -70,7 +69,7 @@
 						<h4>账户管理</h4>
 						<ul>
 							<li  class="on"><a href="{% url 'gym:mygrxx' %}">个人信息</a></li>
-							<li><a href="remima.html">修改密码</a></li>
+							<li><a href="{% url 'gym:remima' %}">修改密码</a></li>
 						</ul>
 					</div>
 				</div>
@@ -121,12 +120,6 @@
 		</div>
 		<!--返回顶部-->
 		<div class="gotop">
-			<a href="{% url 'gym:cart' %}">
-			<dl>
-				<dt><img src="{% static 'gym/style/images/gt1.png' %}"/></dt>
-				<dd>去购<br />物车</dd>
-			</dl>
-			</a>
 			<a href="#" class="dh">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt2.png' %}"/></dt>
