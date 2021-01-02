@@ -3,7 +3,7 @@
 <html>
 	<head lang="en">
 		<meta charset="utf-8" />
-		<title>教练展示</title>
+		<title>储物柜租用</title>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/proList.css' %}"/>
 	</head>
@@ -82,7 +82,7 @@
 					<!--以下展示应当在用户登录后出现-->
 					<li><a href="{% url 'gym:locker' %}">储物柜租用</a></li>
 					<li><a href="perfume.html">课程预约</a></li>
-					
+
 				</ul>
 			</div>
 		</div>
@@ -96,7 +96,7 @@
 			<div class="wrapper clearfix">
 				<a href="{% url 'gym:index' %}">首页</a>
 				<span>/</span>
-				<a href="{% url 'gym:showcoach' %}" class="on">教练展示</a>
+				<a href="{% url 'gym:locker' %}" class="on">储物柜租用</a>
 			</div>
 		</div>
 
@@ -104,26 +104,26 @@
 		<ul class="proList wrapper clearfix">
 			<li>
 					<dl>
-						<dt><img src="{% static 'gym/style/images/wuyanzu.jpg' %}"></dt>
-						<dd>吴教练</dd>
-						<dd>教龄：2年</dd>
+						<dt><img src="{% static 'gym/style/images/locker.jpg' %}"></dt>
+						<dd>001</dd>
+						<dd>位置：二楼</dd>
 
 					</dl>
 				</a>
 			</li>
 			<li>
 					<dl>
-						<dt><img src="{% static 'gym/style/images/wuyanzu.jpg' %}"></dt>
-						<dd>陈教练</dd>
-						<dd>教龄：2年</dd>
+						<dt><img src="{% static 'gym/style/images/locker.jpg' %}"></dt>
+						<dd>001</dd>
+						<dd>位置：一楼</dd>
 					</dl>
 				</a>
 			</li>
 			<li>
 					<dl>
-						<dt><img src="{% static 'gym/style/images/wuyanzu.jpg' %}"></dt>
-						<dd>于教练</dd>
-						<dd>教龄：2年</dd>
+						<dt><img src="{% static 'gym/style/images/locker.jpg' %}"></dt>
+						<dd>001</dd>
+						<dd>位置：三楼</dd>
 					</dl>
 				</a>
 			</li>

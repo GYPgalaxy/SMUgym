@@ -16,8 +16,8 @@
 					<div class="fr clearfix" id="top1">
 						{% if request.session.tel %}
 						<p class="fl">
-							<a href="#" id="login">登录</a>
-							<a href="#" id="reg">注册</a>
+							<a href="{% url 'gym:index' %}" id="login">登录</a>
+							<a href="{% url 'gym:register' %}" id="reg">注册</a>
 						</p>
 						{% endif %}
 						<form action="#" method="get" class="fl">
@@ -38,7 +38,7 @@
 		<!------------------------------idea------------------------------>
 		<div class="address mt">
 			<div class="wrapper clearfix">
-				<a href="#" class="fl">首页</a>
+				<a href="{% url 'gym:index' %}" class="fl">首页</a>
 				<span>/</span>
 				<a href="{% url 'gym:mygxin' %}">个人中心</a>								
 				<span>/</span>

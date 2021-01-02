@@ -31,7 +31,7 @@
 				<ul class="clearfix" id="bott">
 					<li><a href="{% url 'gym:index' %}">首页</a></li>
 					<li>
-						<a href="#">所有课程</a>
+						<a href="{% url 'gym:showcourse' %}">所有课程</a>
 						<div class="sList">
 							<div class="wrapper  clearfix">
 								<a href="paint.html">
@@ -68,7 +68,7 @@
 						</div>
 					</li>
 					<li>
-						<a>最新通知</a>
+						<a href="#">最新通知</a>
 						<div class="sList2">
 							<div class="clearfix">
 								<a>活动相关</a>
@@ -77,12 +77,11 @@
 						</div>
 					</li>
 					<li>
-						<a>明星教练</a>
-
+						<a href="{% url 'gym:showcoach' %}">明星教练</a>
 					</li>
 					<!--以下展示应当在用户登录后出现-->
 					{% if request.session.tel %}
-					<li><a>储物柜租用</a></li>
+					<li><a href="{% url 'gym:locker' %}" >储物柜租用</a></li>
 					<li><a>课程预约</a></li>
 					{% endif %}
 				</ul>

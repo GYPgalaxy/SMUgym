@@ -98,8 +98,23 @@ def remima(request):
             context['msg'] = '原密码错误'
     return render(request, 'gym/remima.html', context)
 
-#测试用
+
+#购物车
+def cart(request):
+    return render(request,'gym/cart.html')
+#支付成功
+def ok(request):
+    return render(request,'gym/ok.html')
+#展示课程
 def showcourse(request):
     return render(request,'gym/showcourse.html')
+#展示教练
 def showcoach(request):
     return render(request,'gym/showcoach.html')
+#订单
+def order(request):
+    return render(request,'gym/order.html')
+#储物柜
+def locker(request):
+    return render(request,'gym/locker.html')
+

@@ -14,11 +14,11 @@
 		<div class="head ding">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
+					<h1 class="fl"><a href="href={% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p class="fl">
-							<a href="#" id="login">登录</a>
-							<a href="#" id="reg">注册</a>
+							<a href="#" id="{% url 'gym:login' %}">登录</a>
+							<a href="#" id="{% url 'gym:register' %}">注册</a>
 						</p>
 						<form action="#" method="get" class="fl">
 							<input type="text" placeholder="搜索" />

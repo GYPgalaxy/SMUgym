@@ -81,7 +81,7 @@
 
 					</li>
 					<!--以下展示应当在用户登录后出现-->
-					<li><a href="paint.html">储物柜租用</a></li>
+					<li><a href="{% url 'gym:locker' %}">储物柜租用</a></li>
 					<li><a href="perfume.html">课程预约</a></li>
 					
 				</ul>
@@ -175,7 +175,7 @@
 						</div>
 					</div>
 					<div class="btns clearfix">
-						<a href="#2"><p class="buy fl">立即购买</p></a>
+						<a href="{% url 'gym:order' %}"><p class="buy fl">立即购买</p></a>
 					</div>
 				</div>
 			</div>
