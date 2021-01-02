@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="022d3c13-c1c5-4ec4-b290-e91be670b755" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gym/static/gym/style/images/nav4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/static/gym/style/images/nav7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../前端/ZBestPC/img/nav7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../前端/ZBestPC/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../前端/ZBestPC/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/static/gym/style/css/proList.css" beforeDir="false" afterPath="$PROJECT_DIR$/gym/static/gym/style/css/proList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/static/gym/style/css/public.css" beforeDir="false" afterPath="$PROJECT_DIR$/gym/static/gym/style/css/public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/templates/gym/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/templates/gym/ok.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/ok.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/templates/gym/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/templates/gym/orderxq.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/orderxq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/templates/gym/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/templates/gym/remima.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/remima.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../前端/ZBestPC/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../前端/ZBestPC/cart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +50,16 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym\style\images" />
+      <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym\style\images" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym\style\js" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\templates\gym" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym\style\css" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym" />
     </key>
   </component>
   <component name="RunManager">
@@ -97,7 +104,8 @@
       <workItem from="1609500822650" duration="1441000" />
       <workItem from="1609509971777" duration="914000" />
       <workItem from="1609549662931" duration="1894000" />
-      <workItem from="1609581573719" duration="3293000" />
+      <workItem from="1609581573719" duration="4837000" />
+      <workItem from="1609591832484" duration="3940000" />
     </task>
     <servers />
   </component>
