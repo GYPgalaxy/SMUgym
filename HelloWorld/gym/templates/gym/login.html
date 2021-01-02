@@ -45,9 +45,9 @@
     <form id="mainForm" class="main-form" action="" method="post" >
         {% csrf_token %}
 		 <div class="tab-title"> 
-		  <a class="linkABlue" id="toAccountLogin" href="{% url 'login' %}">账号登录</a>
+		  <a class="linkABlue" id="toAccountLogin" href="{% url 'gym:login' %}">账号登录</a>
 		  <span class="register-line"></span> 
-		  <a class="linkAGray" id="toVCodeLogin" href="{% url 'register' %}">账号注册</a>
+		  <a class="linkAGray" id="toVCodeLogin" href="{% url 'gym:register' %}">账号注册</a>
 		 </div> 
 		 {% if msg %}
 		 <div id="errorMsg" class="tip-box tip-box visiblility-show"> 
@@ -170,7 +170,7 @@
 				return ;
 			}
 			//验证码不对
-			if( code.toLowerCase()!=verify){
+			if( code!=verify){
 				//提示错误信息
 				var obj = document.getElementById("errorMsg");
 				//修改提示文字
