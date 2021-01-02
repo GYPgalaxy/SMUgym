@@ -12,7 +12,7 @@
 		<div class="head ding">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="img/1logo.png"/></a></h1>
+					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
 						{% if request.session.tel %}
 						<p class="fl">
@@ -44,57 +44,56 @@
 			<div class="wrapper clearfix">
 				<div class="zuo fl">
 					<h3>
-						<a href="#"><img src="img/tx.png"/></a>
+						<a href="#"><img src="{% static 'gym/style/images/tx.png' %}"/></a>
 						<p class="clearfix"><span class="fl">{{ user.name }}</span><span class="fr">[退出登录]</span></p>
 					</h3>
 					<div>
 						<h4>我的交易</h4>
 						<ul>
-							<li><a href="cart.html">我的购物车</a></li>
-							<li><a href="myorderq.html">我的课程</a></li>
-							<li><a href="myprod.html">课程评价</a></li>
+							<li><a href="{% url 'gym:myorderq' %}">我的课程</a></li>
+							<li><a href="{% url 'gym:myprod' %}">课程评价</a></li>
 						</ul>
 						<h4>个人中心</h4>
 						<ul>
 							<li  class="on"><a href="{% url 'gym:mygxin' %}">我的中心</a></li>
-							<li><a href="mygxin.html">健康报告</a></li>
+							<li><a href="{% url 'gym:mygxin' %}">健康报告</a></li>
 						</ul>
 						<h4>账户管理</h4>
 						<ul>
 							<li><a href="{% url 'gym:mygrxx' %}">个人信息</a></li>
-							<li><a href="remima.html">修改密码</a></li>
+							<li><a href="{% url 'gym:remima' %}">修改密码</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="you fl">
 					<div class="tx clearfix">
 						<div class="fl clearfix">
-							<a href="#" class="fl"><img src="img/tx.png"/></a>
+							<a href="#" class="fl"><img src="{% static 'gym/style/images/tx.png' %}"/></a>
 							<p class="fl"><span>{{ user.name }}</span><a href="{% url 'gym:mygrxx' %}">修改个人信息></a></p>
 						</div>
 						<div class="fr">绑定手机：{{ user.tel }}</div>
 					</div>
 					<div class="bott">
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="img/gxin1.jpg"/></a>
+							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin1.jpg' %}"/></a>
 							<p class="fl"><span>待支付的课程：<strong>0</strong></span>
-								<a href="myorderq.html">查看待支付课程></a>
+								<a href="{% url 'gym:myorderq' %}">查看待支付课程></a>
 							</p>
 						</div>
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="img/gxin2.jpg"/></a>
+							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin2.jpg' %}"/></a>
 							<p class="fl"><span>待开课的课程：<strong>0</strong></span>
-								<a href="myorderq.html">查看待收货课程></a>
+								<a href="{% url 'gym:myorderq' %}">查看待收货课程></a>
 							</p>
 						</div>
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="img/gxin3.jpg"/></a>
+							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin3.jpg' %}"/></a>
 							<p class="fl"><span>待评价的课程：<strong>0</strong></span>
-								<a href="myprod.html">查看待评价课程></a>
+								<a href="{% url 'gym:myprod' %}">查看待评价课程></a>
 							</p>
 						</div>
 						<div class="clearfix">
-							<a href="#" class="fl"><img src="img/gxin4.jpg"/></a>
+							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin4.jpg' %}"/></a>
 							<p class="fl"><span>喜欢的课程：<strong>0</strong></span>
 								<a href="#">查看喜欢的课程></a>
 							</p>
@@ -108,27 +107,21 @@
 		
 		<!--返回顶部-->
 		<div class="gotop">
-			<a href="cart.html">
-			<dl>
-				<dt><img src="img/gt1.png"/></dt>
-				<dd>去购<br />物车</dd>
-			</dl>
-			</a>
 			<a href="#" class="dh">
 			<dl>
-				<dt><img src="img/gt2.png"/></dt>
+				<dt><img src="{% static 'gym/style/images/gt2.png' %}"/></dt>
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
 			<a href="{% url 'gym:mygxin' %}">
 			<dl>
-				<dt><img src="img/gt3.png"/></dt>
+				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
 				<dd>个人<br />中心</dd>
 			</dl>
 			</a>
 			<a href="#" class="toptop" style="display: none">
 			<dl>
-				<dt><img src="img/gt4.png"/></dt>
+				<dt><img src="{% static 'gym/style/images/gt4.png' %}"/></dt>
 				<dd>返回<br />顶部</dd>
 			</dl>
 			</a>
@@ -137,9 +130,9 @@
 		<div class="footer">
 			<p class="dibu" style="position: fixed;bottom: 0px;width:100%;height:100px;">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
 		</div>
-		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/user.js" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/public.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/user.js' %}" type="text/javascript" charset="utf-8"></script>
 		
 	</body>
 </html>
