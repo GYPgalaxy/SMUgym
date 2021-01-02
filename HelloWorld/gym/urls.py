@@ -34,4 +34,6 @@ urlpatterns = [
 
     # 测试用
     path('show/', views.showcourse, name='showcourse'),
+    path('showcoach/', views.showcoach, name='showcoach'),
+
 ]
