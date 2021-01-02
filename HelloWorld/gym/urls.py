@@ -17,15 +17,18 @@ urlpatterns = [
     # ex: http://localhost:8000/gym/register/
     path('register/', views.register, name='register'),
 
-    # ex: http://localhost:8000/gym/mygrxx/
+    # ex: http://localhost:8000/gym/mygxin/
     path('mygxin/', views.mygxin, name='mygxin'),
 
     # ex: http://localhost:8000/gym/mygrxx/
     path('mygrxx/', views.mygrxx, name='mygrxx'),
 
+    # ex: http://localhost:8000/gym/myprod/
+    path('myprod/', views.myprod, name='myprod'),
 
-    #以下用来测试
-    # ex: http://localhost:8000/gym/cart/
-    path('cart/', views.cart, name='cart'),
+    # ex: http://localhost:8000/gym/myorderq/
+    path('myorderq/', views.myorderq, name='myorderq'),
 
+    # ex: http://localhost:8000/gym/remima/
+    path('remima/', views.remima, name='remima'),
 ]
