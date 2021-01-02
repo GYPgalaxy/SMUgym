@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     # ex: http://localhost:8000/gym/
-    # path('', views.index, name='index'),
+    path('', views.index, name='index'),
 
     # ex: http://localhost:8000/gym/login/
     path('login/', views.login, name='login'),

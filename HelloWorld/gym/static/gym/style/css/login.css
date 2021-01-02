@@ -1,14 +1,5 @@
 .hide{display:none !important}
 
-/*
-.banner-box {
-	position: relative;
-	min-height: 650px;
-	max-height: 1080px;
-    background: #f8fcff;
-    background: linear-gradient(to bottom, #f8fcff, #f8fcff, #f8fcff);
-}
-*/
 .banner-box:before {
 	position: absolute; /*position:fixed;  absolute*/
 	content: ' ';

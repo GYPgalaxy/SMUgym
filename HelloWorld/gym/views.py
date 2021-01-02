@@ -5,9 +5,13 @@ from django.urls import reverse
 
 from .models import User, Coach, Course, Locker, PhyTest
 # Create your views here.
-# def index(request):
-#     return HttpResponse("You're looking at gym.")
 
+# 首页
+def index(request):
+    return render(request, 'gym/index.html')
+
+
+#登录
 def login(request):
     context = {}
     if request.method == 'POST':
