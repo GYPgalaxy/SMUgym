@@ -22,4 +22,10 @@ urlpatterns = [
 
     # ex: http://localhost:8000/gym/mygrxx/
     path('mygrxx/', views.mygrxx, name='mygrxx'),
+
+
+    #以下用来测试
+    # ex: http://localhost:8000/gym/cart/
+    path('cart/', views.cart, name='cart'),
+
 ]

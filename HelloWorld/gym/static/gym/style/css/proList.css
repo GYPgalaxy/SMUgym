@@ -1,3 +1,4 @@
+
 .banner{
 	min-width: 1160px;
 }
@@ -653,13 +654,14 @@ section h3{
 	height:16px;
 	position: absolute;
 }
+
 .table  label input + span{
 	position: absolute;
 	left:0;
 	top:0;
 	width:16px;
 	height:16px;
-	background: url(../img/temp/check.jpg);
+	background: url(../images/check.jpg);
 }
 .table  label input[type=checkbox]:checked + span{
 	position: absolute;
@@ -667,7 +669,7 @@ section h3{
 	top:0;
 	width:16px;
 	height:16px;
-	background: url(../img/temp/checkOn.jpg);
+	background: url(../images/checkOn.jpg);
 }
 .table .tr p:last-child a,
 .table .tr p:last-child span{

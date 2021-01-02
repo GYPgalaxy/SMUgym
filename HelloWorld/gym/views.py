@@ -67,3 +67,6 @@ def mygrxx(request):
     user = User.objects.get(tel=tel)
     context = {'user': user}
     return render(request, 'gym/mygrxx.html', context)
+
+def cart(request):
+    return render(request,'gym/cart.html')

@@ -42,9 +42,9 @@
 	<form id="mainForm" class="main-form" action="" method="POST" enctype="application/x-www-form-urlencoded" novalidate="novalidate">
 		{% csrf_token %} 
 		 <div class="tab-title"> 
-		  <a class="linkAGray" id="toAccountLogin" href="{% url 'login' %}">账号登录</a>
+		  <a class="linkAGray" id="toAccountLogin" href="{% url 'gym:login' %}">账号登录</a>
 		  <span class="register-line"></span> 
-		  <a class="linkABlue" id="toVCodeLogin" href="{% url 'register' %}">账号注册</a>
+		  <a class="linkABlue" id="toVCodeLogin" href="{% url 'gym:register' %}">账号注册</a>
 		 </div> 
 	
 		 {% if msg %}
