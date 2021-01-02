@@ -70,3 +70,18 @@ class Locker(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.location
+
+#课程订单
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    status = models.IntegerField()
+    time = models.DateTimeField(auto_now=True)
+    comment = models.TextField()
+    star = models.IntegerField()
+
+#留言
+class Message(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    time = models.DateTimeField(auto_now=True)
+    msg = models.TextField()
