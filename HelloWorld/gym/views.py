@@ -97,3 +97,6 @@ def remima(request):
         else:
             context['msg'] = '原密码错误'
     return render(request, 'gym/remima.html', context)
+
+def showcourse(request):
+    return render(request,'gym/showcourse.html')

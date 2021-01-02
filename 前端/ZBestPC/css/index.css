@@ -211,7 +211,6 @@ a.ad{
 }
 .block_home_slider .flex-control-paging li a {width:18px; height:18px; display:block; background-repeat:no-repeat; background-image:url(../img/sprite_nav_3.png); text-indent:-9000px; cursor:pointer;background-size: 180%;}
 .block_home_slider .flex-control-paging li a.flex-active {background-position:right top;}
-
 .block_home_post_feature {width:300px;}
 .block_home_post_feature p {padding-bottom:0px;}
 

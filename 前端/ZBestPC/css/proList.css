@@ -4,6 +4,7 @@
 .banner img{
 	width:100%;
 }
+
 /*********************current********************/
 .current{
 	height:60px;
@@ -900,3 +901,5 @@ ul.sch li h4,ul.sch li a{
 ul.sch li a{
 	color:#666;
 }
+
+

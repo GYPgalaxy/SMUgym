@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8" />
+		<title>课程展示</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/proList.css' %}"/>
+	</head>
+	<body>
+		<!------------------------------head------------------------------>
+		<div class="head">
+			<div class="wrapper clearfix">
+				<div class="clearfix" id="top">
+					<h1 class="fl"><a href="index.html"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
+					<div class="fr clearfix" id="top1">
+                        {% if request.session.tel %}
+						<p class="fl">
+							<a href="{% url 'gym:login' %}" id="login">登录</a>
+							<a href="{% url 'gym:register' %}" id="reg">注册</a>
+						</p>
+                        {% endif %}
+						<div class="btn fl clearfix">
+							<a href="mygxin.html"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+						</div>
+					</div>
+				</div>
+
+
+				<ul class="clearfix" id="bott">
+					<li><a href="index.html">首页</a></li>
+					<li>
+						<a href="#">所有课程</a>
+						<div class="sList">
+							<div class="wrapper  clearfix">
+									<dl>
+										<dt><img src="{% static 'gym/style/images/nav1.png' %}"/></dt>
+										<dd>现代瑜伽</dd>
+									</dl>
+								</a>
+									<dl>
+										<dt><img src="{% static 'gym/style/images/nav2.png' %}"/></dt>
+										<dd>动感单车</dd>
+									</dl>
+								</a>
+									<dl>
+										<dt><img src="{% static 'gym/style/images/nav3.png' %}"/></dt>
+										<dd>有氧长跑</dd>
+									</dl>
+								</a>
+									<dl>
+										<dt><img src="{% static 'gym/style/images/nav4.png' %}"/></dt>
+										<dd>力量训练</dd>
+									</dl>
+								</a>
+									<dl>
+										<dt><img src="{% static 'gym/style/images/nav5.png' %}"/></dt>
+										<dd>身体激活</dd>
+									</dl>
+								</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a>最新通知</a>
+						<div class="sList2">
+							<div class="clearfix">
+								<a>活动相关</a>
+								<a>通知相关</a>
+							</div>
+						</div>
+					</li>
+					<li>
+						<a href="decoration.html">明星教练</a>
+
+					</li>
+					<!--以下展示应当在用户登录后出现-->
+					<li><a href="paint.html">储物柜租用</a></li>
+					<li><a href="perfume.html">课程预约</a></li>
+					
+				</ul>
+			</div>
+		</div>
+		<!-------------------------banner--------------------------->
+		<div class="banner">
+			<a href="#"><img src="{% static 'gym/style/images/banner1.png' %}"/></a>
+		</div>
+
+		<!-----------------address------------------------------->
+		<div class="address">
+			<div class="wrapper clearfix">
+				<a href="index.html">首页</a>
+				<span>/</span>
+				<a href="showcourse.html" class="on">课程展示</a>
+			</div>
+		</div>
+		<!-------------------current---------------------->
+		<div class="current">
+			<div class="wrapper clearfix">
+				<h3 class="fl">全部课程</h3> 
+				<div class="fr choice">
+					<p class="default">排序方式</p>
+					<ul class="select">
+						<li>销量从高到低</li>
+						<li>销量从低到高</li>
+						<li>价格从高到低</li>
+						<li>价格从低到高</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!----------------proList------------------------->
+		<ul class="proList wrapper clearfix">
+			<li>
+					<dl>
+						<dt><img src="{% static 'gym/style/images/cart02.png' %}"></dt>
+						<dd>现代瑜伽导论</dd>
+						<dd>￥17.90</dd>
+					</dl>
+				</a>
+			</li>
+			<li>
+					<dl>
+						<dt><img src="{% static 'gym/style/images/cart02.png' %}"></dt>
+						<dd>动感单车一起嗨皮</dd>
+						<dd>￥17.90</dd>
+					</dl>
+				</a>
+			</li>
+			<li>
+					<dl>
+						<dt><img src="{% static 'gym/style/images/cart02.png' %}"></dt>
+						<dd>野外露营常识</dd>
+						<dd>￥17.90</dd>
+					</dl>
+				</a>
+			</li>
+		</ul>
+		<!----------------mask------------------->
+		<div class="mask"></div>
+		<!-------------------mask内容------------------->
+		<div class="proDets">
+			<img class="off" src="{% static 'gym/style/images/off.jpg' %}" />
+			<div class="tit clearfix">
+				<h4 class="fl">现代瑜伽导论</h4>
+				<span class="fr">￥17.90</span>
+			</div>
+			<div class="proCon clearfix">
+				<div class="proImg fl">
+					<img class="list" src="{% static 'gym/style/images/cart02.png' %}"  />
+					<div class="smallImg clearfix">
+						<img src="{% static 'gym/style/images/cart02.png' %}" data-src="{% static 'gym/style/images/cart02.png' %}">
+					</div>
+				</div>
+				<div class="fr">
+					<div class="proIntro">
+						<p>可选教练</p>
+						<div class="smallImg clearfix categ">
+							<p class="fl"><img src="{% static 'gym/style/images/gt3.png' %}" alt="张教练" data-src="{% static 'gym/style/images/gt3.png' %}"></p>
+							<p class="fl"><img src="{% static 'gym/style/images/gt3.png' %}" alt="王教练" data-src="{% static 'gym/style/images/gt3.png' %}"></p>
+
+						</div>
+						<p>数量</p>
+						<div class="num clearfix">
+							<img class="fl sub" src="{% static 'gym/style/images/sub.jpg' %}">
+							<span class="fl" contentEditable="true">1</span>
+							<img class="fl add" src="{% static 'gym/style/images/add.jpg' %}">
+							<p class="please fl">请选择教练!</p>
+						</div>
+					</div>
+					<div class="btns clearfix">
+						<a href="#2"><p class="buy fl">立即购买</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--返回顶部-->
+		<div class="gotop">
+			<a href="#" class="dh">
+			<dl>
+				<dt><img src="{% static 'gym/style/images/gt2.png' %}"/></dt>
+				<dd>联系<br />客服</dd>
+			</dl>
+			</a>
+			<a href="mygxin.html">
+			<dl>
+				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
+				<dd>个人<br />中心</dd>
+			</dl>
+			</a>
+			<a href="#" class="toptop" style="display: none;">
+			<dl>
+				<dt><img src="{% static 'gym/style/images/gt4.png' %}"/></dt>
+				<dd>返回<br />顶部</dd>
+			</dl>
+			</a>
+			<p>400-800-8200</p>
+		</div>
+		<div class="msk"></div>
+<!--footer-->
+		<div class="footer">
+			<p class="dibu">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
+		</div>
+		<script src="{% static 'gym/style/js/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/public.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/nav.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/pro.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'gym/style/js/cart.js' %}" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

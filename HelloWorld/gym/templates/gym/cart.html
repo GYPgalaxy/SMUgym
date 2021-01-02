@@ -12,7 +12,7 @@
 		<div class="head ding">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
+					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p class="fl">
 							<a href="{% url 'gym:login' %}" id="login">登录</a>

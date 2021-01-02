@@ -31,4 +31,7 @@ urlpatterns = [
 
     # ex: http://localhost:8000/gym/remima/
     path('remima/', views.remima, name='remima'),
+
+    # 测试用
+    path('show/', views.showcourse, name='showcourse'),
 ]
