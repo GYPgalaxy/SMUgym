@@ -13,11 +13,11 @@
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
 
-					<h1 class="fl"><a href="index.html"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
+					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p class="fl">
-							<a href="#" id="login">登录</a>
-							<a href="#" id="reg">注册</a>
+							<a href="#" id="{% url 'gym:login' %}">登录</a>
+							<a href="#" id="{% url 'gym:register' %}">注册</a>
 						</p>
 						<div class="btn fl clearfix">
 							<a href="mygxin.html"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
@@ -27,9 +27,9 @@
 
 
 				<ul class="clearfix" id="bott">
-					<li><a href="index.html">首页</a></li>
+					<li><a href="{% url 'gym:index' %}">首页</a></li>
 					<li>
-						<a href="#">所有课程</a>
+						<a href="{% url 'gym:showcourse' %}">所有课程</a>
 						<div class="sList">
 							<div class="wrapper  clearfix">
 								<a href="paint.html">
@@ -65,6 +65,7 @@
 							</div>
 						</div>
 					</li>
+                    <a href="paint.html">
 					<li>
 						<a href="flowerDer.html">最新通知</a>
 						<div class="sList2">
@@ -93,9 +94,9 @@
 		<!-----------------address------------------------------->
 		<div class="address">
 			<div class="wrapper clearfix">
-				<a href="index.html">首页</a>
+				<a href="{% url 'gym:index' %}">首页</a>
 				<span>/</span>
-				<a href="showcourse.html" class="on">教练展示</a>
+				<a href="{% url 'gym:showcoach' %}" class="on">教练展示</a>
 			</div>
 		</div>
 
@@ -137,7 +138,7 @@
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="mygxin.html">
+			<a href="{% url 'gym:mygrxx' %}">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
 				<dd>个人<br />中心</dd>

@@ -21,38 +21,43 @@
 						</p>
                         {% endif %}
 						<div class="btn fl clearfix">
-							<a href="mygxin.html"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
 						</div>
 					</div>
 				</div>
 
 
 				<ul class="clearfix" id="bott">
-					<li><a href="index.html">首页</a></li>
+					<li><a href="{% url 'gym:index' %}">首页</a></li>
 					<li>
-						<a href="#">所有课程</a>
+						<a href="{% url 'gym:showcourse' %}">所有课程</a>
 						<div class="sList">
 							<div class="wrapper  clearfix">
+                                <a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav1.png' %}"/></dt>
 										<dd>现代瑜伽</dd>
 									</dl>
 								</a>
+                                <a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav2.png' %}"/></dt>
 										<dd>动感单车</dd>
 									</dl>
 								</a>
+                                <a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav3.png' %}"/></dt>
 										<dd>有氧长跑</dd>
 									</dl>
 								</a>
+                                <a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav4.png' %}"/></dt>
 										<dd>力量训练</dd>
 									</dl>
 								</a>
+                                <a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav5.png' %}"/></dt>
 										<dd>身体激活</dd>
@@ -61,8 +66,9 @@
 							</div>
 						</div>
 					</li>
+                    <a href="paint.html">
 					<li>
-						<a>最新通知</a>
+						<a href="flowerDer.html">最新通知</a>
 						<div class="sList2">
 							<div class="clearfix">
 								<a>活动相关</a>
@@ -71,7 +77,7 @@
 						</div>
 					</li>
 					<li>
-						<a href="decoration.html">明星教练</a>
+						<a href="{% url 'gym:showcoach' %}">明星教练</a>
 
 					</li>
 					<!--以下展示应当在用户登录后出现-->
@@ -182,7 +188,7 @@
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="mygxin.html">
+			<a href="{% url 'gym:mygrxx' %}">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
 				<dd>个人<br />中心</dd>
