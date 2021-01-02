@@ -6,7 +6,7 @@
 		<title>个人信息</title>
 
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
-		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/mygrxx.css.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/mygrxx.css' %}" />
 	</head>
 	<body>
 		<!------------------------------head------------------------------>
@@ -14,7 +14,7 @@
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
 
-					<h1 class="fl"><a href="index.html"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
+					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p class="fl">
 							<a href="#" id="login">登录</a>
@@ -25,10 +25,9 @@
 							<input type="button" />
 						</form>
 						<div class="btn fl clearfix">
-							<a href="mygxin.html"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
 							<a href="#" class="er1"><img src="{% static 'gym/style/images/ewm.png' %}"/></a>
-							<a href="cart.html"><img src="{% static 'gym/style/images/gwc.png' %}"/></a>
-{#							<p><a href="#"><img src="img/smewm.png"/></a></p>#}
+{#							<p><a href="#"><img src="{% static 'gym/style/images/smewm.png' %}"/></a></p>#}
 						</div>
 					</div>
 				</div>
@@ -38,9 +37,9 @@
 		<!------------------------------idea------------------------------>
 		<div class="address mt">
 			<div class="wrapper clearfix">
-				<a href="index.html" class="fl">首页</a>
+				<a href="{% url 'gym:index' %}" class="fl">首页</a>
 				<span>/</span>
-				<a href="mygxin.html" class="on">个人信息</a>
+				<a href="{% url 'gym:mygxin' %}" class="on">个人信息</a>
 			</div>
 		</div>
 		
@@ -50,40 +49,38 @@
 				<div class="zuo fl">
 					<h3>
 						<a href="#"><img src="{% static 'gym/style/images/tx.png' %}"/></a>
-						<p class="clearfix"><span class="fl">[羊羊羊]</span><span class="fr">[退出登录]</span></p>
+						<p class="clearfix"><span class="fl">{{ user.name }}</span><span class="fr">[退出登录]</span></p>
 					</h3>
 					<div>
 						<h4>我的交易</h4>
 						<ul>
-							<li><a href="cart.html">我的购物车</a></li>
-							<li><a href="myorderq.html">我的课程</a></li>
-							<li><a href="myprod.html">课程评价</a></li>
+							<li><a href="{% url 'gym:myorderq' %}">我的课程</a></li>
+							<li><a href="{% url 'gym:myprod' %}">课程评价</a></li>
 						</ul>
 						<h4>个人中心</h4>
 						<ul>
-							<li><a href="mygxin.html">我的中心</a></li>
+							<li><a href="{% url 'gym:mygxin' %}">我的中心</a></li>
 							<li><a href="mygxin.html">健康报告</a></li>
 							
 						</ul>
 						<h4>账户管理</h4>
 						<ul>
-							<li><a href="mygrxx.html">个人信息</a></li>
-							<li  class="on"><a href="remima.html">修改密码</a></li>
+							<li><a href="{% url 'gym:mygrxx' %}">个人信息</a></li>
+							<li  class="on"><a href="{% url 'gym:remima' %}">修改密码</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="you fl">
 					<h2>修改密码</h2>
-					<form action="#" method="get" class="remima">
-						<p><span>选择验证身份方式：</span><input type="checkbox" />密码验证  <input type="checkbox" />邮箱验证 </p>
-						<p><span>原密码：</span><input type="text" /></p>
+					<font color="#FF0000">{{ msg }}</font>
+					<form action="" method="POST" class="remima">
+						{% csrf_token %}
+						<p><span>原密码：</span><input type="text" name='pwd' /></p>
 						<p class="op">输入原密码</p>
-						<p><span>新密码：</span><input type="text" /></p>
+						<p><span>新密码：</span><input type="text" name='new_pwd' /></p>
 						<p class="op">6-16 个字符，需使用字母、数字或符号组合，不能使用纯数字、纯字母、纯符号</p>
-						<p><span>重复新密码：</span><input type="text" /></p>
+						<p><span>重复新密码：</span><input type="text" name='anew_pwd' /></p>
 						<p class="op">请再次输入密码</p>
-						<p><span>验证码：</span><input type="text" /><img src="{% static 'gym/style/images/code.jpg' %}" alt="" /></p>
-						<p class="op">按右图输入验证码，不区分大小写</p>
 						<input type="submit" value="提交" />
 					</form>
 				</div>
@@ -92,19 +89,13 @@
 		
 		<!--返回顶部-->
 		<div class="gotop">
-			<a href="cart.html">
-			<dl>
-				<dt><img src="{% static 'gym/style/images/gt1.png' %}"/></dt>
-				<dd>去购<br />物车</dd>
-			</dl>
-			</a>
 			<a href="#" class="dh">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt2.png' %}"/></dt>
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="mygxin.html">
+			<a href="{% url 'gym:mygxin' %}">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
 				<dd>个人<br />中心</dd>
