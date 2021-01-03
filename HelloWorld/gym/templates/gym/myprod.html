@@ -82,40 +82,39 @@
 						</ul>
 					</div>
 					<div class="sx clearfix">
-						<div class="clearfix">
-							<dl class="fl">
-								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
-								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
-								<dd>¥199.00</dd>
-								<dd>16000人评价</dd>
-								<dd><a href="#2">评价</a></dd>
-							</dl>
-							<dl class="fl">
-								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
-								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
-								<dd>¥199.00</dd>
-								<dd>16000人评价</dd>
-								<dd><a href="#2">评价</a></dd>
-							</dl>
-						</div>
-						<div class="clearfix">
-							<dl class="fl">
-								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
-								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
-								<dd>¥199.00</dd>
-								<dd>16000人评价</dd>
-								<dd><a href="#2">查看评价</a></dd>							
-							</dl>
-						</div>
-						<div class="clearfix" >
-							<dl class="fl">
-								<dt><a href="#"><img src="{% static 'gym/style/images/nav3.jpg' %}"/></a></dt>
-								<dd><a href="#">家用创意壁挂  釉下彩复古</a></dd>
-								<dd>¥199.00</dd>
-								<dd>16000人评价</dd>
-								<dd><a href="#2">暂不能评价</a></dd>							
-							</dl>
-						</div>
+						{% for order in order_list %}
+							{% if order.status == 0 %}
+							<div class="clearfix" >
+								<dl class="fl">
+									<dt><a href="#"><img src="{% static 'gym/style/images/nav3.png' %}"/></a></dt>
+									<dd><a href="#">{{ order.course_id.name }}</a></dd>
+									<dd>¥{{ order.course_id.price }}</dd>
+									<dd>{{ order.time }}</dd>
+									<dd><a href="#2">评价</a></dd>							
+								</dl>
+							</div>
+							{% elif order.status == 1 %}
+							<div class="clearfix" >
+								<dl class="fl">
+									<dt><a href="#"><img src="{% static 'gym/style/images/nav3.png' %}"/></a></dt>
+									<dd><a href="#">{{ order.course_id.name }}</a></dd>
+									<dd>¥{{ order.course_id.price }}</dd>
+									<dd>{{ order.time }}</dd>
+									<dd><a href="#2">查看评价</a></dd>							
+								</dl>
+							</div>
+							{% elif order.status == 2 %}
+							<div class="clearfix" >
+								<dl class="fl">
+									<dt><a href="#"><img src="{% static 'gym/style/images/nav3.png' %}"/></a></dt>
+									<dd><a href="#">{{ order.course_id.name }}</a></dd>
+									<dd>¥{{ order.course_id.price }}</dd>
+									<dd>{{ order.time }}</dd>
+									<dd><a href="#2">暂不能评价</a></dd>							
+								</dl>
+							</div>
+							{% endif %}
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -127,7 +126,8 @@
 			<div class="pj">
 				<div class="clearfix"><a href="#" class="fr gb"><img src="{% static 'gym/style/images/icon4.png' %}"/></a></div>
 				<h3>商品评分</h3>
-				<form action="#" method="get">
+				<form action="" method="POST">
+					{% csrf_token %}
 					<div class="clearfix">
 						<p class="fl">请打分：</p>
 						<p class="fl" id="xin">
@@ -138,9 +138,9 @@
 							<a href="#2"><img src="{% static 'gym/style/images/xin.png' %}"/></a>
 						</p>
 					</div>
-					<textarea name="" rows="" cols="" placeholder="请输入评价" ></textarea>
+					<input type="text"  name="comment" rows="" cols="" placeholder="请输入评价" />
 					<div class="bc">
-						<input type="button" value="保存"  />
+						<input type="submit" value="保存"  />
 						<input type="button" value="取消" />
 					</div>
 				</form>
@@ -149,7 +149,7 @@
 			<div class="chak">
 				<div class="clearfix"><a href="#" class="fr gb"><img src="{% static 'gym/style/images/icon4.png' %}"/></a></div>
 				<h3>商品评分</h3>
-				<form action="#" method="get">
+				<form action="" method="get">
 					<div class="clearfix">
 						<p class="fl">请打分：</p>
 						<p class="fl" id="xin">
@@ -160,9 +160,9 @@
 							<a href="#2"><img src="{% static 'gym/style/images/hxin.png' %}"/></a>
 						</p>
 					</div>
-					<textarea name="" rows="" cols="" placeholder="请输入评价" >挺好的挺好的挺好的~五分好评</textarea>
+					<textarea name="" rows="" cols="" placeholder="{{ fake_comment }}" ></textarea>
 					<div class="bc">
-						<input type="button" value="保存"  />
+						<input type="button" value="确定"  />
 						<input type="button" value="取消" />
 					</div>
 				</form>
