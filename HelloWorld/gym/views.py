@@ -136,12 +136,20 @@ def orderxq(request, order_id):
 #支付成功
 def ok(request):
     return render(request,'gym/ok.html')
+
 #展示教练
 def showcoach(request):
-    return render(request,'gym/showcoach.html')
+    tel = request.session.get('tel')
+    user = User.objects.get(tel=tel)
+    context = {'user': user}
+    coach_list = Coach.objects.all()
+    context['coach_list'] = coach_list
+    return render(request,'gym/showcoach.html', context)
+
 #订单
 def order(request):
     return render(request,'gym/order.html')
+
 #储物柜
 def locker(request):
     return render(request,'gym/locker.html')
