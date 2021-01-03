@@ -3,7 +3,7 @@
 <html>
 	<head lang="en">
 		<meta charset="utf-8" />
-		<title>最家</title>
+		<title>个人中心</title>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/myorder.css' %}" />
 	</head>
@@ -38,7 +38,7 @@
 		<!------------------------------idea------------------------------>
 		<div class="address mt">
 			<div class="wrapper clearfix">
-				<a href="#" class="fl">首页</a>
+				<a href="{% url 'gym:index' %}" class="fl">首页</a>
 				<span>/</span>
 				<a href="{% url 'gym:mygxin' %}">个人中心</a>
 				<span>/</span>
@@ -111,11 +111,6 @@
 						</div>
 					</div>
 					{% endfor %}
-<<<<<<< HEAD
-					
-=======
-
->>>>>>> 3f205a0... 更新
 					<div class="fenye clearfix">
 						<a href="#"><img src="{% static 'gym/style/images/zuo.jpg' %}"/></a>
 						<a href="#">1</a>

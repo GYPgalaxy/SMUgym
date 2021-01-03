@@ -3,20 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="022d3c13-c1c5-4ec4-b290-e91be670b755" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/static/gym/style/js/pro.js" beforeDir="false" afterPath="$PROJECT_DIR$/gym/static/gym/style/js/pro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/locker.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/locker.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/mygrxx.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/mygrxx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/mygxin.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/mygxin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/myorderq.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/myorderq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/myprod.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/myprod.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/ok.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/ok.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/orderxq.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/orderxq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/remima.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/remima.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/showcoach.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/showcoach.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/templates/gym/showcourse.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/showcourse.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gym/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +100,7 @@
       <workItem from="1609591832484" duration="4583000" />
       <workItem from="1609596467017" duration="2638000" />
       <workItem from="1609604478558" duration="7030000" />
-      <workItem from="1609646125807" duration="5944000" />
+      <workItem from="1609646125807" duration="7493000" />
     </task>
     <servers />
   </component>
