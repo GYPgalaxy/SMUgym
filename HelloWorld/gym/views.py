@@ -92,6 +92,10 @@ def myprod(request):
         Order.objects.filter(user_id=user.id).update(comment=comment)
         Order.objects.filter(user_id=user.id).update(star=5)
         Order.objects.filter(user_id=user.id).update(status=1)
+<<<<<<< HEAD
+=======
+    print(1111111111111111111111111)
+>>>>>>> 3f205a0... 更新
     return render(request, 'gym/myprod.html', context)
 
 def remima(request):
@@ -145,4 +149,3 @@ def order(request):
 #储物柜
 def locker(request):
     return render(request,'gym/locker.html')
-

@@ -12,7 +12,7 @@
 		<div class="head">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
-					<h1 class="fl"><a href="index.html"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
+					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
                         {% if request.session.tel %}
 						<p class="fl">
@@ -175,7 +175,7 @@
 						</div>
 					</div>
 					<div class="btns clearfix">
-						<a href="{% url 'gym:order' %}"><p class="buy fl">立即购买</p></a>
+						<a href="{% url 'gym:ok' %}"><p class="buy fl">立即购买</p></a>
 					</div>
 				</div>
 			</div>

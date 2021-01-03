@@ -82,7 +82,7 @@
 					<!--以下展示应当在用户登录后出现-->
 					{% if request.session.tel %}
 					<li><a href="{% url 'gym:locker' %}" >储物柜租用</a></li>
-					<li><a>课程预约</a></li>
+					<li><a href="{% url 'gym:locker' %}" >课程预约</a></li>
 					{% endif %}
 				</ul>
 			</div>
