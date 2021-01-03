@@ -3,7 +3,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 
-from .models import User, Coach, Course, Locker, PhyTest
+from .models import User, Coach, Course, Locker, PhyTest, Order, Message
 
 
 def index(request):
@@ -71,12 +71,27 @@ def myorderq(request):
     tel = request.session.get('tel')
     user = User.objects.get(tel=tel)
     context = {'user': user}
+    order_list = Order.objects.filter(user_id=user.id)
+    for order in order_list:
+        order.course_id = Course.objects.get(id=order.course_id)
+    context['order_list'] = order_list
     return render(request, 'gym/myorderq.html', context)
 
 def myprod(request):
     tel = request.session.get('tel')
     user = User.objects.get(tel=tel)
     context = {'user': user}
+    order_list = Order.objects.filter(user_id=user.id)
+    for order in order_list:
+        order.course_id = Course.objects.get(id=order.course_id)
+        context['fake_comment'] = order.comment
+    context['order_list'] = order_list
+    if request.method == 'POST':
+        comment = request.POST.get('comment')
+        print(comment)
+        Order.objects.filter(user_id=user.id).update(comment=comment)
+        Order.objects.filter(user_id=user.id).update(star=5)
+        Order.objects.filter(user_id=user.id).update(status=1)
     return render(request, 'gym/myprod.html', context)
 
 def remima(request):
@@ -98,16 +113,29 @@ def remima(request):
             context['msg'] = '原密码错误'
     return render(request, 'gym/remima.html', context)
 
+def showcourse(request):
+    tel = request.session.get('tel')
+    user = User.objects.get(tel=tel)
+    context = {'user': user}
+    course_list = Course.objects.all()
+    context['course_list'] = course_list
+    return render(request, 'gym/showcourse.html', context)
 
-#购物车
-def cart(request):
-    return render(request,'gym/cart.html')
+def orderxq(request, order_id):
+    tel = request.session.get('tel')
+    user = User.objects.get(tel=tel)
+    context = {'user': user}
+    order = Order.objects.get(id=order_id)
+    course = Course.objects.get(id=order.course_id)
+    coach = Coach.objects.get(id=course.coach_id)
+    context['order'] = order
+    context['course'] = course
+    context['coach'] = coach
+    return render(request, 'gym/orderxq.html', context)
+
 #支付成功
 def ok(request):
     return render(request,'gym/ok.html')
-#展示课程
-def showcourse(request):
-    return render(request,'gym/showcourse.html')
 #展示教练
 def showcoach(request):
     return render(request,'gym/showcoach.html')
