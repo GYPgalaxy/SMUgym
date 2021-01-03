@@ -16,8 +16,8 @@
 					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
 						<p class="fl">
-							<a href="#" id="{% url 'gym:login' %}">登录</a>
-							<a href="#" id="{% url 'gym:register' %}">注册</a>
+							<a href="{% url 'gym:login' %}" id="login">登录</a>
+							<a href="{% url 'gym:register' %}" id="reg">注册</a>
 						</p>
 						<div class="btn fl clearfix">
 							<a href="mygxin.html"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>

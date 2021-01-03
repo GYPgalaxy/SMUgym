@@ -16,7 +16,7 @@
 					<div class="fr clearfix" id="top1">
 						{% if request.session.tel %}
 						<p class="fl">
-							<a href="{% url 'gym:index' %}" id="login">登录</a>
+							<a href="{% url 'gym:login' %}" id="login">登录</a>
 							<a href="{% url 'gym:register' %}" id="reg">注册</a>
 						</p>
 						{% endif %}
@@ -38,14 +38,14 @@
 		<!------------------------------idea------------------------------>
 		<div class="address mt">
 			<div class="wrapper clearfix">
-				<a href="{% url 'gym:index' %}" class="fl">首页</a>
+				<a href="#" class="fl">首页</a>
 				<span>/</span>
-				<a href="{% url 'gym:mygxin' %}">个人中心</a>								
+				<a href="{% url 'gym:mygxin' %}">个人中心</a>
 				<span>/</span>
 				<a href="{% url 'gym:myorderq' %}" class="on">我的订单</a>
 			</div>
 		</div>
-		
+
 		<!------------------------------Bott------------------------------>
 		<div class="Bott">
 			<div class="wrapper clearfix">
@@ -89,27 +89,29 @@
 							<input type="button" name="" id="" value="" />
 						</form>
 					</div>
+					{% for order in order_list %}
 					<div class="dkuang">
 						<p class="one">已开课</p>
 						<div class="word clearfix">
 							<ul class="fl clearfix">
-								<li>2016年12月1日 18:53</li>
-								<li>杨小黄</li>
-								<li>订单号:5160513358520018</li>
+								<li>{{ order.time }}</li>
+								<li>{{ user.name }}</li>
+								<li>订单号:{{ order.id }}</li>
 								<li>在线支付</li>
 							</ul>
-							<p class="fr">订单金额：<span>99.00</span>元</p>
+							<p class="fr">订单金额：<span>{{ order.course_id.price }}</span>元</p>
 						</div>
 						<div class="shohou clearfix">
 							<a href="#" class="fl"><img src="{% static 'gym/style/images/g1.png' %}"/></a>
-							<p class="fl"><a href="#">HIIT十分钟快速燃脂</a><a href="#">¥99.00×1</a></p>
+							<p class="fl"><a href="#">{{ order.course_id.name }}</a><a href="#">¥{{ order.course_id.price }}×1</a></p>
 							<p class="fr">
 								<a href="{% url 'gym:myprod' %}">待评价</a>
-								<a href="orderxq.html">订单详情</a>
+								<a href="{% url 'gym:orderxq' order.id %}">订单详情</a>
 							</p>
 						</div>
 					</div>
-					
+					{% endfor %}
+
 					<div class="fenye clearfix">
 						<a href="#"><img src="{% static 'gym/style/images/zuo.jpg' %}"/></a>
 						<a href="#">1</a>
@@ -141,8 +143,8 @@
 			<p>400-800-8200</p>
 		</div>
 		<!--footer-->
-		<div class="footer">
-			<p class="dibu" style="position: fixed;bottom: 0px;width:100%;height:100px;">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
+        <div class="footer">
+			<p class="dibu">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
 		</div>
 		<script src="{% static 'gym/style/js/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'gym/style/js/public.js' %}" type="text/javascript" charset="utf-8"></script>

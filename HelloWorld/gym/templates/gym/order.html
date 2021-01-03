@@ -25,9 +25,9 @@
 							<input type="button" />
 						</form>
 						<div class="btn fl clearfix">
-							<a href="mygxin.html"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
 							<a href="#" class="er1"><img src="{% static 'gym/style/images/ewm.png' %}"/></a>
-							<a href="cart.html"><img src="{% static 'gym/style/images/gwc.png' %}"/></a>
+							<a href="{% url 'gym:cart' %}"><img src="{% static 'gym/style/images/gwc.png' %}"/></a>
 {#							<p><a href="#"><img src="img/smewm.png"/></a></p>#}
 						</div>
 					</div>
@@ -42,7 +42,7 @@
 			<div class="site">
 				<p class="wrapper clearfix">
 					<span class="fl">订单确认</span>
-					<img class="top" src="{% static 'gym/style/images/cart02.png' %}">
+					<img class="top" src="{% static 'gym/style/images/cartTop02.png' %}">
 				</p>
 			</div>
 			<!-----------------orderCon------------------->
@@ -74,14 +74,15 @@
 						<img class="on" src="{% static 'gym/style/images/way01.jpg' %}">
 						<img src="{% static 'gym/style/images/way02.jpg' %}">
 						<img src="{% static 'gym/style/images/way03.jpg' %}">
-						<img src="{% static 'gym/style/images/way04.jpg' %}">
 					</div>
 					<!--------dis---------------->
 
 				</div>
 				<div class="orderR fr">
 					<div class="msg">
-						<h3>订单内容<a href="cart.html" class="fr">返回购物车</a></h3>
+                        <h3>订单内容</h3>
+
+{#						<h3>订单内容<a href="cart.html" class="fr">返回购物车</a></h3>#}
 						<!--------ul---------------->
 						<ul class="clearfix">
 							<li class="fl">
@@ -146,7 +147,7 @@
 		</div>
 		<!--footer-->
 		<div class="footer">
-			<p class="dibu" style="position: fixed;bottom: 0px;width:100%;height:100px;">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
+			<p class="dibu">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
 		</div>
 		<script src="{% static 'gym/style/js/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'gym/style/js/public.js' %}" type="text/javascript" charset="utf-8"></script>
