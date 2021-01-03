@@ -15,12 +15,14 @@
 
 					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
+						{% if request.session.tel %}
 						<p class="fl">
 							<a href="#" id="{% url 'gym:login' %}">登录</a>
 							<a href="#" id="{% url 'gym:register' %}">注册</a>
 						</p>
+						{% endif %}
 						<div class="btn fl clearfix">
-							<a href="mygxin.html"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
 						</div>
 					</div>
 				</div>
@@ -102,31 +104,19 @@
 
 		<!----------------proList------------------------->
 		<ul class="proList wrapper clearfix">
+            {% for coach in coach_list %}
 			<li>
+                <a>
 					<dl>
 						<dt><img src="{% static 'gym/style/images/wuyanzu.jpg' %}"></dt>
-						<dd>吴教练</dd>
+						<dd>{{ coach.name }}教练</dd>
+						<dd>教练编号：{{ coach.id }}</dd>
 						<dd>教龄：2年</dd>
-
+						<dd>联系电话：{{ coach.tel }}</dd>	
 					</dl>
 				</a>
-			</li>
-			<li>
-					<dl>
-						<dt><img src="{% static 'gym/style/images/wuyanzu.jpg' %}"></dt>
-						<dd>陈教练</dd>
-						<dd>教龄：2年</dd>
-					</dl>
-				</a>
-			</li>
-			<li>
-					<dl>
-						<dt><img src="{% static 'gym/style/images/wuyanzu.jpg' %}"></dt>
-						<dd>于教练</dd>
-						<dd>教龄：2年</dd>
-					</dl>
-				</a>
-			</li>
+            </li>
+            {% endfor %}
 		</ul>
 		<!----------------mask------------------->
 		<div class="mask"></div>
