@@ -32,6 +32,12 @@ urlpatterns = [
     # ex: http://localhost:8000/gym/remima/
     path('remima/', views.remima, name='remima'),
 
+    # ex: http://localhost:8000/gym/showcourse/
+    path('showcourse/', views.showcourse, name='showcourse'),
+
+    # ex: http://localhost:8000/gym/orderxq/5/
+    path('orderxq/<int:order_id>', views.orderxq, name='orderxq'),
+
     # 测试用
     path('show/', views.showcourse, name='showcourse'),
     path('showcoach/', views.showcoach, name='showcoach'),
