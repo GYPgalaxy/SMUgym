@@ -15,15 +15,16 @@
 
 					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
-						{% if request.session.tel %}
-						<p class="fl">
-							<a href="{% url 'gym:login' %}" id="login">登录</a>
-							<a href="{% url 'gym:register' %}" id="reg">注册</a>
-						</p>
-						{% endif %}
-						<div class="btn fl clearfix">
-							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
-						</div>
+                        {% if request.session.tel %}
+                            <div class="btn fl clearfix">
+							    <a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+						    </div>
+                            {% else %}
+                            <p class="fl">
+                                <a href="{% url 'gym:login' %}" id="login">登录</a>
+                                <a href="{% url 'gym:register' %}" id="reg">注册</a>
+                            </p>
+                        {% endif %}
 					</div>
 				</div>
 
@@ -69,7 +70,7 @@
 					</li>
                     <a href="paint.html">
 					<li>
-						<a href="flowerDer.html">最新通知</a>
+						<a href="{% url 'gym:index' %}">最新通知</a>
 						<div class="sList2">
 							<div class="clearfix">
 								<a href="proList.html">活动相关</a>
@@ -82,8 +83,10 @@
 
 					</li>
 					<!--以下展示应当在用户登录后出现-->
-					<li><a href="{% url 'gym:locker' %}">储物柜租用</a></li>
-					<li><a href="perfume.html">课程预约</a></li>
+					{% if request.session.tel %}
+					<li><a href="{% url 'gym:locker' %}" >储物柜租用</a></li>
+					<li><a href="{% url 'gym:courseorder' %}" >课程预约</a></li>
+					{% endif %}
 					
 				</ul>
 			</div>
@@ -111,7 +114,9 @@
 						<dt><img src="{% static 'gym/style/images/wuyanzu.jpg' %}"></dt>
 						<dd>{{ coach.name }}教练</dd>
 						<dd>教练编号：{{ coach.id }}</dd>
-						<dd>教龄：2年</dd>
+                        <dd>性别：{{ coach.gender }}</dd>
+                        <dd>生日：{{ coach.birthday }}</dd>
+                        <dd>个人介绍：{{ coach.info }}</dd>
 						<dd>联系电话：{{ coach.tel }}</dd>	
 					</dl>
 				</a>

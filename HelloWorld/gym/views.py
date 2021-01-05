@@ -115,10 +115,19 @@ def remima(request):
 
 def showcourse(request):
     tel = request.session.get('tel')
-    user = User.objects.get(tel=tel)
-    context = {'user': user}
+    context = {}
     course_list = Course.objects.all()
+    coach_list = Coach.objects.all()
     context['course_list'] = course_list
+    context['coach_list'] = coach_list
+    if request.method == 'POST':
+        user = User.objects.get(tel=tel)
+        course_id = request.POST.get('course_id')
+        context['user'] = user
+        user_id = user.id
+        status = 0
+        Order.objects.create(user_id=user_id, course_id=course_id, status=status, star=5)
+        return render(request, 'gym/ok.html', context)
     return render(request, 'gym/showcourse.html', context)
 
 def orderxq(request, order_id):
@@ -140,8 +149,7 @@ def ok(request):
 #展示教练
 def showcoach(request):
     tel = request.session.get('tel')
-    user = User.objects.get(tel=tel)
-    context = {'user': user}
+    context = {}
     coach_list = Coach.objects.all()
     context['coach_list'] = coach_list
     return render(request,'gym/showcoach.html', context)
@@ -150,6 +158,24 @@ def showcoach(request):
 def order(request):
     return render(request,'gym/order.html')
 
+
 #储物柜
 def locker(request):
-    return render(request,'gym/locker.html')
+    tel = request.session.get('tel')
+    context = {}
+    locker_list = Locker.objects.all()
+    context['locker_list'] = locker_list
+    return render(request,'gym/locker.html', context)
+
+#课程预约
+def courseorder(request):
+    tel = request.session.get('tel')
+    context = {}
+    message_list = Message.objects.all()
+    context['message_list'] = message_list
+    if request.method == 'POST':
+        user = User.objects.get(tel=tel)
+        context['user'] = user
+        msg = request.POST.get('msg')
+        Message.objects.create(user_id=user.id, msg=msg)
+    return render(request,'gym/courseorder.html', context)

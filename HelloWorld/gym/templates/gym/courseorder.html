@@ -3,7 +3,7 @@
 <html>
 	<head lang="en">
 		<meta charset="utf-8" />
-		<title>课程展示</title>
+		<title>储物柜租用</title>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/proList.css' %}"/>
 	</head>
@@ -12,6 +12,7 @@
 		<div class="head">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
+
 					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
                         {% if request.session.tel %}
@@ -24,7 +25,6 @@
                                 <a href="{% url 'gym:register' %}" id="reg">注册</a>
                             </p>
                         {% endif %}
-
 					</div>
 				</div>
 
@@ -32,29 +32,34 @@
 				<ul class="clearfix" id="bott">
 					<li><a href="{% url 'gym:index' %}">首页</a></li>
 					<li>
-						<a href="#">所有课程</a>
+						<a href="{% url 'gym:showcourse' %}">所有课程</a>
 						<div class="sList">
 							<div class="wrapper  clearfix">
+								<a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav1.png' %}"/></dt>
 										<dd>现代瑜伽</dd>
 									</dl>
 								</a>
+								<a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav2.png' %}"/></dt>
 										<dd>动感单车</dd>
 									</dl>
 								</a>
+								<a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav3.png' %}"/></dt>
 										<dd>有氧长跑</dd>
 									</dl>
 								</a>
+								<a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav4.png' %}"/></dt>
 										<dd>力量训练</dd>
 									</dl>
 								</a>
+								<a href="paint.html">
 									<dl>
 										<dt><img src="{% static 'gym/style/images/nav5.png' %}"/></dt>
 										<dd>身体激活</dd>
@@ -63,12 +68,13 @@
 							</div>
 						</div>
 					</li>
+                    <a href="paint.html">
 					<li>
-						<a href="{% url 'gym:index' %}">最新通知</a>
+                        <a href="{% url 'gym:index' %}">最新通知</a>
 						<div class="sList2">
 							<div class="clearfix">
-								<a>活动相关</a>
-								<a>通知相关</a>
+								<a href="proList.html">活动相关</a>
+								<a href="vase_proList.html">通知相关</a>
 							</div>
 						</div>
 					</li>
@@ -81,7 +87,7 @@
 					<li><a href="{% url 'gym:locker' %}" >储物柜租用</a></li>
 					<li><a href="{% url 'gym:courseorder' %}" >课程预约</a></li>
 					{% endif %}
-					
+
 				</ul>
 			</div>
 		</div>
@@ -92,51 +98,41 @@
 
 		<!-----------------address------------------------------->
 		<div class="address">
-			<div class="wrapper clearfix">
+			<div class="wrapper">
 				<a href="{% url 'gym:index' %}">首页</a>
 				<span>/</span>
-				<a href="{% url 'gym:showcourse' %}" class="on">课程展示</a>
+				<a href="{% url 'gym:locker' %}" class="on">留言板</a>
 			</div>
-		</div>
-		<!-------------------current---------------------->
-		<div class="current">
-			<div class="wrapper clearfix">
-				<h3 class="fl">全部课程</h3> 
-				<div class="fr choice">
-					<p class="default">排序方式</p>
-					<ul class="select">
-						<li>销量从高到低</li>
-						<li>销量从低到高</li>
-						<li>价格从高到低</li>
-						<li>价格从低到高</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+        </div>
+        
+        <div class="wrapper">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="msg" style="font-size: 15px;" placeholder="请输入想要说的话">
+                <input type="submit" style="background-color: #4CAF50;font-size: 15px;" value="留言">
+            </form>
+        </div>
+<br>
 		<!----------------proList------------------------->
-		<ul class="proList wrapper clearfix">
-            {% for course in course_list %}
+		<ul class="wrapper" style="
+    {#border-radius: 25px;#}
+    border: 2px solid #8AC007;
+    width: 70%;
+    height: 100%;
+    font-size: 15px;
+    line-height:2.4;
+}">
+            {% for message in message_list %}
             <li>
-                <a>
-                    <dl>
-                        <dt><img src="{% static 'gym/style/images/cart01.png' %}"></dt>
-                        <dd>课程名：{{ course.name }}</dd>
-                        <dd>开课时间：{{ course.start }}</dd>
-                        <dd>结课时间：{{ course.end }}</dd>
-                        <dd>课程人数：{{ course.maxnum }}</dd>
-                        <dd>课程简介：{{ course.info }}</dd>
-                        <dd>￥{{ course.price }}</dd>
-					</dl>
-					<form action="" method="POST">
-						{% csrf_token %}
-						<input type="hidden" name="course_id" value="{{ course.id }}">
-						<input type="submit" value="立即购买">
-					</form>
-                </a>
+                <div><p>用户编号：{{ message.user_id }}</p></div>
+                <div><p>留言时间：{{ message.time }}</p></div>
+                <div><p>{{ message.msg }}</p></div>
+            <div><p>       ---------------------------         </p></div>
             </li>
             {% endfor %}
 		</ul>
-
+		<!----------------mask------------------->
+		<div class="mask"></div>
 		<!--返回顶部-->
 		<div class="gotop">
 			<a href="#" class="dh">
@@ -145,7 +141,7 @@
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="{% url 'gym:mygxin' %}">
+			<a href="{% url 'gym:mygrxx' %}">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
 				<dd>个人<br />中心</dd>
@@ -159,7 +155,6 @@
 			</a>
 			<p>400-800-8200</p>
 		</div>
-		<div class="msk"></div>
 <!--footer-->
 		<div class="footer">
 			<p class="dibu">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
