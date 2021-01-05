@@ -45,7 +45,7 @@
 				<div class="zuo fl">
 					<h3>
 						<a href="#"><img src="{% static 'gym/style/images/tx.png' %}"/></a>
-						<p class="clearfix"><span class="fl">{{ user.name }}</span><span class="fr">[退出登录]</span></p>
+						<p class="clearfix"><span class="fl">{{ user.name }}</span><span class="fr"><a href="{% url 'gym:logout' %}">[退出登录]</a></span></p>
 					</h3>
 					<div>
 						<h4>我的交易</h4>
@@ -76,25 +76,25 @@
 					<div class="bott">
 						<div class="clearfix">
 							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin1.jpg' %}"/></a>
-							<p class="fl"><span>待支付的课程：<strong>0</strong></span>
+							<p class="fl"><span>待支付的课程：<strong>2</strong></span>
 								<a href="{% url 'gym:myorderq' %}">查看待支付课程></a>
 							</p>
 						</div>
 						<div class="clearfix">
 							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin2.jpg' %}"/></a>
-							<p class="fl"><span>待开课的课程：<strong>0</strong></span>
+							<p class="fl"><span>待开课的课程：<strong>3</strong></span>
 								<a href="{% url 'gym:myorderq' %}">查看待收货课程></a>
 							</p>
 						</div>
 						<div class="clearfix">
 							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin3.jpg' %}"/></a>
-							<p class="fl"><span>待评价的课程：<strong>0</strong></span>
+							<p class="fl"><span>待评价的课程：<strong>1</strong></span>
 								<a href="{% url 'gym:myprod' %}">查看待评价课程></a>
 							</p>
 						</div>
 						<div class="clearfix">
 							<a href="#" class="fl"><img src="{% static 'gym/style/images/gxin4.jpg' %}"/></a>
-							<p class="fl"><span>喜欢的课程：<strong>0</strong></span>
+							<p class="fl"><span>喜欢的课程：<strong>1</strong></span>
 								<a href="#">查看喜欢的课程></a>
 							</p>
 						</div>
@@ -128,7 +128,11 @@
 			<p>000-0000-000</p>
 		</div>
 		<!--footer-->
+<<<<<<< HEAD
 		<div class="footer">
+=======
+        <div class="footer">
+>>>>>>> newbranch
 			<p class="dibu">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
 		</div>
 		<script src="{% static 'gym/style/js/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>

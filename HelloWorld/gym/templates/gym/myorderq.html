@@ -3,7 +3,7 @@
 <html>
 	<head lang="en">
 		<meta charset="utf-8" />
-		<title>最家</title>
+		<title>个人中心</title>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
 		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/myorder.css' %}" />
 	</head>
@@ -52,7 +52,7 @@
 				<div class="zuo fl">
 					<h3>
 						<a href="#"><img src="{% static 'gym/style/images/tx.png' %}"/></a>
-						<p class="clearfix"><span class="fl">{{ user.name }}</span><span class="fr">[退出登录]</span></p>
+						<p class="clearfix"><span class="fl">{{ user.name }}</span><span class="fr"><a href="{% url 'gym:logout' %}">[退出登录]</a></span></p>
 					</h3>
 					<div>
 						<h4>我的交易</h4>
@@ -63,7 +63,7 @@
 						<h4>个人中心</h4>
 						<ul>
 							<li><a href="{% url 'gym:mygxin' %}">我的中心</a></li>
-							<li><a href="mygxin.html">健康报告</a></li>
+							<li><a href="{% url 'gym:mygrxx' %}">健康报告</a></li>
 
 						</ul>
 						<h4>账户管理</h4>
@@ -111,7 +111,10 @@
 						</div>
 					</div>
 					{% endfor %}
+<<<<<<< HEAD
 
+=======
+>>>>>>> newbranch
 					<div class="fenye clearfix">
 						<a href="#"><img src="{% static 'gym/style/images/zuo.jpg' %}"/></a>
 						<a href="#">1</a>

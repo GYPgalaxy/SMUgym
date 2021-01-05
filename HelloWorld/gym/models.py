@@ -42,15 +42,15 @@ class User(models.Model):
 # 课程
 class Course(models.Model):
     coach = models.ForeignKey(Coach, on_delete=models.CASCADE)
-    course_name = models.CharField(max_length=200)
-    price = models.DecimalField(max_digits=19, decimal_places=10)
+    name = models.CharField(max_length=200)
+    price = models.DecimalField(max_digits=19, decimal_places=2)
     start = models.DateField()
     end = models.DateField()
     maxnum = models.IntegerField()
     info = models.TextField()
 
     def __str__(self):
-        return self.course_name
+        return self.name
 
 #健康报告
 class PhyTest(models.Model):
@@ -66,7 +66,7 @@ class PhyTest(models.Model):
 #储物柜
 class Locker(models.Model):
     location = models.CharField(max_length=200)
-    isavailable = models.BooleanField()
+    isavailable = models.BooleanField(default=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.location

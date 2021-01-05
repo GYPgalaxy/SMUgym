@@ -3,27 +3,28 @@
 <html>
 	<head lang="en">
 		<meta charset="utf-8" />
-		<title>海事杠铃健身房</title>
-		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/index.css' %}" />
+		<title>储物柜租用</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/public.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'gym/style/css/proList.css' %}"/>
 	</head>
 	<body>
 		<!------------------------------head------------------------------>
 		<div class="head">
 			<div class="wrapper clearfix">
 				<div class="clearfix" id="top">
+
 					<h1 class="fl"><a href="{% url 'gym:index' %}"><img src="{% static 'gym/style/images/1logo.png' %}"/></a></h1>
 					<div class="fr clearfix" id="top1">
-						{% if request.session.tel %}
-						<div class="btn fl clearfix">
-							<a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
-						</div>
-						{% else %}
-						<p class="fl">
-							<a href="{% url 'gym:login' %}" id="login">登录</a>
-							<a href="{% url 'gym:register' %}" id="reg">注册</a>
-						</p>
-						{% endif %}
+                        {% if request.session.tel %}
+                            <div class="btn fl clearfix">
+							    <a href="{% url 'gym:mygxin' %}"><img src="{% static 'gym/style/images/grzx.png' %}"/></a>
+						    </div>
+                            {% else %}
+                            <p class="fl">
+                                <a href="{% url 'gym:login' %}" id="login">登录</a>
+                                <a href="{% url 'gym:register' %}" id="reg">注册</a>
+                            </p>
+                        {% endif %}
 					</div>
 				</div>
 
@@ -67,50 +68,72 @@
 							</div>
 						</div>
 					</li>
+                    <a href="paint.html">
 					<li>
-						<a href="{% url 'gym:index' %}">最新通知</a>
+                        <a href="{% url 'gym:index' %}">最新通知</a>
 						<div class="sList2">
 							<div class="clearfix">
-								<a>活动相关</a>
-								<a>通知相关</a>
+								<a href="proList.html">活动相关</a>
+								<a href="vase_proList.html">通知相关</a>
 							</div>
 						</div>
 					</li>
 					<li>
 						<a href="{% url 'gym:showcoach' %}">明星教练</a>
+
 					</li>
 					<!--以下展示应当在用户登录后出现-->
 					{% if request.session.tel %}
 					<li><a href="{% url 'gym:locker' %}" >储物柜租用</a></li>
-<<<<<<< HEAD
-					<li><a href="{% url 'gym:locker' %}" >课程预约</a></li>
-=======
 					<li><a href="{% url 'gym:courseorder' %}" >课程预约</a></li>
->>>>>>> newbranch
 					{% endif %}
+
 				</ul>
 			</div>
 		</div>
 		<!-------------------------banner--------------------------->
-		<div class="block_home_slider">
-			<div id="home_slider" class="flexslider">
-				<ul class="slides">
-					<li>
-						<div class="slide">
-							<img src="{% static 'gym/style/images/banner2 (2).jpg' %}"/>
-						</div>
-					</li>
-					<li>
-						<div class="slide">
-							<img src="{% static 'gym/style/images/banner1 (2).jpg' %}"/>
-						</div>
-					</li>
-				</ul>
-			</div>
+		<div class="banner">
+			<a href="#"><img src="{% static 'gym/style/images/banner1.png' %}"/></a>
 		</div>
 
-		
-		<!--右侧导航栏-->
+		<!-----------------address------------------------------->
+		<div class="address">
+			<div class="wrapper">
+				<a href="{% url 'gym:index' %}">首页</a>
+				<span>/</span>
+				<a href="{% url 'gym:locker' %}" class="on">留言板</a>
+			</div>
+        </div>
+        
+        <div class="wrapper">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <input type="text" name="msg" style="font-size: 15px;" placeholder="请输入想要说的话">
+                <input type="submit" style="background-color: #4CAF50;font-size: 15px;" value="留言">
+            </form>
+        </div>
+<br>
+		<!----------------proList------------------------->
+		<ul class="wrapper" style="
+    {#border-radius: 25px;#}
+    border: 2px solid #8AC007;
+    width: 70%;
+    height: 100%;
+    font-size: 15px;
+    line-height:2.4;
+}">
+            {% for message in message_list %}
+            <li>
+                <div><p>用户编号：{{ message.user_id }}</p></div>
+                <div><p>留言时间：{{ message.time }}</p></div>
+                <div><p>{{ message.msg }}</p></div>
+            <div><p>       ---------------------------         </p></div>
+            </li>
+            {% endfor %}
+		</ul>
+		<!----------------mask------------------->
+		<div class="mask"></div>
+		<!--返回顶部-->
 		<div class="gotop">
 			<a href="#" class="dh">
 			<dl>
@@ -118,44 +141,26 @@
 				<dd>联系<br />客服</dd>
 			</dl>
 			</a>
-			<a href="{% url 'gym:mygxin' %}">
+			<a href="{% url 'gym:mygrxx' %}">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt3.png' %}"/></dt>
 				<dd>个人<br />中心</dd>
 			</dl>
 			</a>
-			<a href="#" class="toptop" style="display: none">
+			<a href="#" class="toptop" style="display: none;">
 			<dl>
 				<dt><img src="{% static 'gym/style/images/gt4.png' %}"/></dt>
 				<dd>返回<br />顶部</dd>
 			</dl>
 			</a>
-			<p>179-217-1227</p>
+			<p>400-800-8200</p>
 		</div>
-		
-		<!-------------------login-------------------------->
-		<!--footer-->
+<!--footer-->
 		<div class="footer">
 			<p class="dibu">海事杠铃  &copy;2020-2077海事杠铃开发小组版权所有<br />
 		</div>
 		<script src="{% static 'gym/style/js/jquery-1.12.4.min.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'gym/style/js/public.js' %}" type="text/javascript" charset="utf-8"></script>
 		<script src="{% static 'gym/style/js/nav.js' %}" type="text/javascript" charset="utf-8"></script>
-		<script src="{% static 'gym/style/js/jquery.flexslider-min.js' %}" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			$(function() {
-				$('#home_slider').flexslider({
-					animation: 'slide',
-					controlNav: true,
-					directionNav: true,
-					animationLoop: true,
-					slideshow: true,
-					slideshowSpeed:2000,
-					useCSS: false
-				});
-			});
-		</script>
-		
-		
 	</body>
 </html>

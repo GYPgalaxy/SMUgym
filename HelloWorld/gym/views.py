@@ -92,7 +92,10 @@ def myprod(request):
         Order.objects.filter(user_id=user.id).update(comment=comment)
         Order.objects.filter(user_id=user.id).update(star=5)
         Order.objects.filter(user_id=user.id).update(status=1)
+<<<<<<< HEAD
     print(1111111111111111111111111)
+=======
+>>>>>>> newbranch
     return render(request, 'gym/myprod.html', context)
 
 def remima(request):
@@ -116,10 +119,26 @@ def remima(request):
 
 def showcourse(request):
     tel = request.session.get('tel')
+<<<<<<< HEAD
     user = User.objects.get(tel=tel)
     context = {'user': user}
     course_list = Course.objects.all()
     context['course_list'] = course_list
+=======
+    context = {}
+    course_list = Course.objects.all()
+    coach_list = Coach.objects.all()
+    context['course_list'] = course_list
+    context['coach_list'] = coach_list
+    if request.method == 'POST':
+        user = User.objects.get(tel=tel)
+        course_id = request.POST.get('course_id')
+        context['user'] = user
+        user_id = user.id
+        status = 0
+        Order.objects.create(user_id=user_id, course_id=course_id, status=status, star=5)
+        return render(request, 'gym/ok.html', context)
+>>>>>>> newbranch
     return render(request, 'gym/showcourse.html', context)
 
 def orderxq(request, order_id):
@@ -137,12 +156,44 @@ def orderxq(request, order_id):
 #支付成功
 def ok(request):
     return render(request,'gym/ok.html')
+<<<<<<< HEAD
+=======
+
+>>>>>>> newbranch
 #展示教练
 def showcoach(request):
-    return render(request,'gym/showcoach.html')
+    tel = request.session.get('tel')
+    context = {}
+    coach_list = Coach.objects.all()
+    context['coach_list'] = coach_list
+    return render(request,'gym/showcoach.html', context)
+
 #订单
 def order(request):
     return render(request,'gym/order.html')
+
+
 #储物柜
 def locker(request):
+<<<<<<< HEAD
     return render(request,'gym/locker.html')
+=======
+    tel = request.session.get('tel')
+    context = {}
+    locker_list = Locker.objects.all()
+    context['locker_list'] = locker_list
+    return render(request,'gym/locker.html', context)
+
+#课程预约
+def courseorder(request):
+    tel = request.session.get('tel')
+    context = {}
+    message_list = Message.objects.all()
+    context['message_list'] = message_list
+    if request.method == 'POST':
+        user = User.objects.get(tel=tel)
+        context['user'] = user
+        msg = request.POST.get('msg')
+        Message.objects.create(user_id=user.id, msg=msg)
+    return render(request,'gym/courseorder.html', context)
+>>>>>>> newbranch

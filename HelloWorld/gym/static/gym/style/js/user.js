@@ -1,3 +1,4 @@
+
 $(function(){
 
 //	订单页面  修改地址
@@ -83,10 +84,10 @@ $(function(){
 			var index = $(this).index();
 			for(var j = 0; j<5;j++){
 				if(j<=index){
-					$("#xin").eq(i).find("a").eq(j).find("img").attr("src","img/hxin.png");
+					$("#xin").eq(i).find("a").eq(j).find("img").attr("src","images/hxin.png");
 				}
 				else{
-					$("#xin").eq(i).find("a").eq(j).find("img").attr("src","img/xin.png");
+					$("#xin").eq(i).find("a").eq(j).find("img").attr("src","images/xin.png");
 				}
 				
 			}

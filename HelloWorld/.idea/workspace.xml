@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="022d3c13-c1c5-4ec4-b290-e91be670b755" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/static/gym/style/js/pro.js" beforeDir="false" afterPath="$PROJECT_DIR$/gym/static/gym/style/js/pro.js" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/gym/templates/gym/courseorder.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorld/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorld/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/gym/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gym/static/gym/style/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/gym/static/gym/style/js/user.js" afterDir="false" />
+>>>>>>> newbranch
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/locker.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/locker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/mygrxx.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/mygrxx.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/mygxin.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/mygxin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/myorderq.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/myorderq.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/myprod.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/myprod.html" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/ok.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/ok.html" afterDir="false" />
+=======
+>>>>>>> newbranch
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/order.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/orderxq.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/orderxq.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gym/templates/gym/remima.html" beforeDir="false" afterPath="$PROJECT_DIR$/gym/templates/gym/remima.html" afterDir="false" />
@@ -50,14 +61,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/gym/static/gym/style/images" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gym/templates/gym" />
+>>>>>>> newbranch
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\templates\gym" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym\style\images" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym\style\js" />
-      <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\templates\gym" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static\gym\style\css" />
       <recent name="D:\Mine\project\软件工程课设\HelloWorld\gym\static" />
     </key>
@@ -113,7 +128,16 @@
       <workItem from="1609591832484" duration="4583000" />
       <workItem from="1609596467017" duration="2638000" />
       <workItem from="1609604478558" duration="7030000" />
+<<<<<<< HEAD
       <workItem from="1609646125807" duration="5944000" />
+=======
+      <workItem from="1609646125807" duration="7493000" />
+      <workItem from="1609657410701" duration="6160000" />
+      <workItem from="1609667445330" duration="3710000" />
+      <workItem from="1609682079054" duration="1035000" />
+      <workItem from="1609683346766" duration="3038000" />
+      <workItem from="1609741653982" duration="2821000" />
+>>>>>>> newbranch
     </task>
     <servers />
   </component>
